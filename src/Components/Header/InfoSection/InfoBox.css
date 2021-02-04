@@ -1,0 +1,18 @@
+.infoBox__text{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	color: white;
+	background-color: rgb(0,0, 0, 0.5);
+	/* width: 100%; */
+	padding: 5px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.infoBox__text :hover{
+	background-color: rgb(0,0, 0, 0.9);
+}

@@ -1,0 +1,39 @@
+.BriefAbout{
+	display: flex;
+	justify-content: center;
+	padding: 1rem 10rem;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.BriefAbout >img{
+	width: 25vw;
+	border-radius: 5px;
+	object-fit: contain;
+}
+
+.BriefAbout__content{
+	flex: 1;
+	margin-left: 1rem;
+	width: 80%;
+	text-align: justify;
+}
+
+.BriefAbout__content > h2{
+	color: #1f3c88;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+}
+
+.BriefAbout__content >p{
+	color: grey;
+	font-size: 1.5rem;
+}
+
+.BriefAbout__content>p>i{
+	color: #1f3c88;
+	
+}
+
+

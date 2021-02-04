@@ -1,0 +1,9 @@
+.Carousel__images{
+	margin: 0 1rem 0;
+}
+
+.Carousel__images >img{
+	width: 100%;
+	height: 600px;
+	object-fit: cover;
+}

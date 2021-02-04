@@ -1,0 +1,38 @@
+.Partners>h3{
+	color: #1f3c88;
+	font-size: 2rem;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.partners_box {
+    display: block;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+	transform: translate3d(0,0,0);
+
+}
+
+.Partners__box-logoList{
+	display: flex;
+	justify-content: space-evenly;
+    list-style: none;
+    height: 120px;
+    animation: moveSlideshow 60s linear infinite;
+    align-items: center;
+	opacity: .5;
+	
+}
+
+@keyframes moveSlideshow {
+	100% {
+	  transform: translateX(-66.6666%);
+	}
+  }
+
+.partners_lg{
+	height: 5rem;
+	object-fit: contain;
+}

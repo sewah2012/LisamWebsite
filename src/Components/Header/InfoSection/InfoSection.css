@@ -1,0 +1,14 @@
+.infoSection{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 1rem 10rem;
+}
+
+.infoSection__head>h2{
+	color: #1f3c88;
+	font-size: 2rem;
+	text-transform: uppercase;
+	margin-top: .5rem;
+	text-align: center;
+}

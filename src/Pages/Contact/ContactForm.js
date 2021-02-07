@@ -36,7 +36,7 @@ const ContactForm = () => {
 			<div className='contactForm__getintouch'> 
 				<h2>Get in touch ... </h2>
 				<div className='contactForm__wrapper' >
-				<form className='contactForm__form'>
+				<form className='contactForm__form' name="contact" method="POST" data-netlify="true">
 
 					<input placeholder='Full Name' name='name' type='text' className='contactForm__form-field' required />
 

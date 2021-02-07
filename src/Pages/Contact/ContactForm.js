@@ -6,6 +6,7 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 
 const ContactForm = () => {
+	
 	return (
 		<div className='contactForm'>
 			<div>

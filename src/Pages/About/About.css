@@ -1,0 +1,57 @@
+.about__info{
+	margin: 1rem 5rem;
+	padding: 1rem 5rem;
+}
+.about__info-history{	
+	text-align: justify;
+	font-size: 1.5rem;
+	color: grey;
+	margin-bottom: 2.5rem;
+}
+.about h2{
+	color: #1f3c88;
+	font-size: 2rem;
+	text-transform: uppercase;
+	margin: .5rem 0;
+	text-align: center;
+}
+
+.about__mission{
+	display: flex;
+	justify-content: flex-start;
+}
+
+.about__mission-details{
+	margin-left: 1rem;
+	text-align: justify;
+	font-size: 1.5rem;
+	color: grey;
+}
+.about__mission>img{
+	width: 25vw;
+	border-radius: 5px;
+	object-fit: contain;
+	margin-top: 4rem;
+}
+
+.staffRow{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background-color: #f6f5f5;
+	padding: 2rem 5rem;
+	
+}
+
+.about__info-leadership > p{
+	text-align: center;
+	padding: 1rem 10rem;
+	font-size: 1.2rem;
+	
+}
+
+.about__mission ul{
+	list-style-type: disc;
+	padding-left: 5rem;
+
+}

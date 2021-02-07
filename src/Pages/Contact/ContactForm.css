@@ -1,0 +1,46 @@
+.contactForm{
+	background-color: #1f3c88;
+	padding: 5rem 10rem;
+	color: #ffffff;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.contactForm__form{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.contactForm__getintouch{
+	flex: 1;
+	margin: 2rem 2rem;
+}
+
+.contactForm__address{
+	color: #ffffff;
+}
+.contactForm__form-field{
+	padding: .5rem;
+	margin: 1rem;
+	border-radius: 10px;
+	text-align: justify;
+	font-size: 1rem;
+}
+
+.contactForm .MuiButton-root{
+	background-color: #ffffff;
+	color: #1f3c88;
+}
+
+.contactForm .MuiButton-root:hover{
+	background-color:transparent;
+	color: #ffffff;
+}
+
+.contactForm__wrapper{
+width: 80%;
+}
+

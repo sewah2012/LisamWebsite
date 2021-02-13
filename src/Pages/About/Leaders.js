@@ -56,7 +56,7 @@ export const leaders = [
 		position: 'Auditor General',
 		imageUrl: '/assets/imgs/auditor.jpg',
 		phone: '+212 675 412 195',
-		email: 'not available',
+		email: 'pthomas69@gmail.com',
 		facebook: 'https://www.facebook.com/peterthomas.kollie.9',
 		linkind: ''
 	},

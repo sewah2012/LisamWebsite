@@ -1,0 +1,27 @@
+.mediabody{
+	display: flex;
+	padding: 5rem 10rem;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+
+}
+
+.mediabody__news{
+	border-right: 2px solid grey;
+}
+
+@media screen and (max-width:600px){
+	.mediabody{
+		display: flex;
+		flex-direction: column;
+		padding: .5rem 1rem;
+		flex-wrap: wrap;
+		align-items: center;
+	
+	}
+	
+	.mediabody__news{
+		border-bottom: 2px solid grey;
+		border-right: none;
+	}
+}

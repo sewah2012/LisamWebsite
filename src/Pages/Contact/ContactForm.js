@@ -36,15 +36,34 @@ const ContactForm = () => {
 			<div className='contactForm__getintouch'> 
 				<h2>Get in touch ... </h2>
 				<div className='contactForm__wrapper' >
-				<form className='contactForm__form' name="contact" method="POST" data-netlify="true">
+				
+				<form name="contact" className='contactForm__form'>
 
-					<input placeholder='Full Name' name='name' type='text' className='contactForm__form-field' required />
+					<input 
+						placeholder='Full Name' 
+						name='name' 
+						type='text' 
+						className='contactForm__form-field' 
+						required 
+					/>
 
 
-					<input placeholder='Email Address' name='email' type='email' className='contactForm__form-field' required />
+					<input 
+						placeholder='Email Address' 
+						name='email' 
+						type='email' 
+						className='contactForm__form-field' 
+						required 
+					/>
 
 
-					<textarea placeholder='Please specify your inquiry...' name='message' type='text' rows='10' className='contactForm__form-field' required />
+					<textarea 
+						placeholder='Please specify your inquiry...' 
+						name='message' 
+						type='text' 
+						rows='10' 
+						className='contactForm__form-field' 
+					/>
 
 					<Button color='primary' type='submit'>SEND MESSAGE</Button>
 				</form>

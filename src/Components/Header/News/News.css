@@ -1,0 +1,17 @@
+.newsrow{
+	display: grid;
+	grid-template-columns: repeat(3,auto);
+	
+}
+
+.newsrow__item{
+	
+}
+
+@media screen and (max-width:600px){
+	.newsrow{
+		display: flex;
+		flex-direction: column;
+		
+	}
+}

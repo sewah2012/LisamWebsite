@@ -1,0 +1,21 @@
+.document{
+	display: flex;
+	align-items: center;
+	margin: 1rem;
+}
+.document__avt{
+	width: 60px;
+}
+
+.document >h2{
+	text-transform: uppercase;
+	color: blue;
+	font-size: 1rem;
+	padding: 1rem;
+}
+
+.document >h2:hover{
+	color:red;
+	text-decoration: underline;
+
+}

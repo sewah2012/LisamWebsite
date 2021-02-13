@@ -36,8 +36,9 @@
 }
 
 .contactForm .MuiButton-root:hover{
-	background-color:transparent;
+	background-color:#1f883e;
 	color: #ffffff;
+	
 }
 
 .contactForm__wrapper{

@@ -10,8 +10,8 @@ export const MenuLinks = [
 		cName: 'Header__navbar-links-link'
 	},
 	{
-		label: 'Events',
-		path: '/events',
+		label: 'Media',
+		path: '/media',
 		cName: 'Header__navbar-links-link'
 	},
 	{

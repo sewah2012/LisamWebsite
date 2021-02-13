@@ -1,6 +1,8 @@
 import './Publications.css';
 import React, { useState } from 'react'
 import { AppBar, Tab, Tabs } from '@material-ui/core';
+import News from '../News/News';
+import Documents from '../Documents/Documents';
 
 function TabPanel({ children, value, index }) {
 	return (
@@ -21,14 +23,12 @@ const Publications = () => {
 				<AppBar position='static'>
 
 					<Tabs value={value} onChange={handleChange}>
-						<Tab label='Upcomming Events' />
-						<Tab label='Announcement' />
-						<Tab label='Press Release' />
+						<Tab label='News and Press Releases' />
+						<Tab label='Important Documents' />
 					</Tabs>
 				</AppBar>
-				<TabPanel value={value} index={0}><h1>Upcomming Events</h1></TabPanel>
-				<TabPanel value={value} index={1}><h1>Announcement</h1></TabPanel>
-				<TabPanel value={value} index={2}><h1>Press Statements </h1></TabPanel>
+				<TabPanel value={value} index={0}><News /> </TabPanel>
+				<TabPanel value={value} index={1}><Documents /> </TabPanel>
 			</div>
 		</div>
 	)

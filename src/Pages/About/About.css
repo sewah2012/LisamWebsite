@@ -55,3 +55,37 @@
 	padding-left: 5rem;
 
 }
+
+@media screen and (max-width:600px){
+	.about__info{
+		margin: .5rem 1rem;
+		padding: .5rem 1rem;
+	}
+
+	.about__mission{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	
+	.about__mission-details{
+		margin-top: 0.5;
+		text-align: justify;
+		font-size: 1.5rem;
+		color: grey;
+	}
+	.about__mission>img{
+		width: 100%;
+		border-radius: 5px;
+		object-fit: contain;
+		margin-top: 4rem;
+	}
+
+	.about__info-leadership > p{
+		text-align: justify;
+		padding: .5rem 1rem;
+		font-size: 1.2rem;
+		
+	}
+}

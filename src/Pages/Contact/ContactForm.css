@@ -45,3 +45,13 @@
 width: 80%;
 }
 
+@media screen and (max-width:600px){
+	.contactForm{
+		background-color: #1f3c88;
+		padding: .5rem 1rem;
+		color: #ffffff;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+}

@@ -36,4 +36,14 @@
 	
 }
 
+@media screen and (max-width:600px){
+	.BriefAbout{
+		display: flex;
+		justify-content: center;
+		padding: .5rem 1rem;
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}	
+}
+
 

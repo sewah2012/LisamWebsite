@@ -10,8 +10,8 @@ export const FooterLinks = [
 		cName: 'Header__navbar-links-link'
 	},
 	{
-		label: 'Events',
-		path: '/events',
+		label: 'Media',
+		path: '/media',
 		cName: 'Header__navbar-links-link'
 	},
 	{
@@ -28,7 +28,7 @@ export const FooterLinks = [
 
 	{
 		label: 'Documents',
-		path: '/documents',
+		path: '/media',
 		cName: 'Header__navbar-links-link'
 	},
 ];

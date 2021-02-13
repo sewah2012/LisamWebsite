@@ -4,3 +4,12 @@
 	color: #ffffff;
 	padding: 1rem 10rem;
 }
+
+@media screen and (max-width:600px){
+	.publications{
+
+		background-color: #ee6f57;
+		color: #ffffff;
+		padding: .5rem .5rem;
+	}
+}

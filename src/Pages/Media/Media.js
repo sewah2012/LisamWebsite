@@ -9,7 +9,7 @@ const Media = () => {
 	return (
 		<div>
 			<Header />
-			<Banner title='Announcements / Documents' image='/assets/imgs/mediabg.jpg' />
+			<Banner title='Press Releases / Documents' image='/assets/imgs/mediabg.jpg' />
 			<MediaBody />
 			<Footer/>
 		</div>

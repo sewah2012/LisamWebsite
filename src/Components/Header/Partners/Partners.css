@@ -12,6 +12,7 @@
     position: relative;
     overflow: hidden;
 	transform: translate3d(0,0,0);
+	width: 100vw;
 
 }
 
@@ -23,6 +24,7 @@
     animation: moveSlideshow 60s linear infinite;
     align-items: center;
 	opacity: .5;
+	width: 80%;
 	
 }
 

@@ -1,0 +1,40 @@
+.membership{
+	margin: 1rem 5rem;
+	padding: 1rem 5rem;
+}
+
+.membership >h2{
+	color: #1f3c88;
+	font-size: 2rem;
+	text-transform: uppercase;
+	margin: .5rem 0;
+	text-align: center;
+}
+.membership__info{
+	display: flex;
+	/* flex-wrap: wrap; */
+	justify-content: flex-start;
+}
+
+.membership__info>img{
+	height: 20rem;
+	object-fit: contain;
+	border-radius: 5px;
+	margin-right: 1rem;
+}
+
+.membership__info-details{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	text-align: justify;
+	font-size: 1.5rem;
+	color: grey;
+	margin-bottom: 2.5rem;
+}
+
+.membership__info-details >p{
+	font-size: 1.2rem;
+}
+

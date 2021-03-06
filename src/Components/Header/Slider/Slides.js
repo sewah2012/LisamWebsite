@@ -9,7 +9,7 @@ export const Slides = [
 	},
 	{
 		imageUrl: '/assets/imgs/car3.jpeg',
-		legend: "Student Leader from Some of Regions in Morocco",
+		legend: "Student Leaders from various of Regions in Morocco met for a meeting at the Embassy in Rabat",
 	},
 	{
 		imageUrl: '/assets/imgs/car1.jpeg',

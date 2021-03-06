@@ -13,7 +13,7 @@ const HomeSlider = () => {
 					Slides.map((slide, index) => (
 						<div key={index} className='Carousel__images'>
 							<img src={slide.imageUrl} />
-							<p className="legend">{slide.legend}</p>
+							<p className="legend" style={{fontSize:"1.2rem"}}>{slide.legend}</p>
 						</div>
 					))
 				}

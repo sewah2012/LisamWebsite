@@ -15,8 +15,8 @@ export const MenuLinks = [
 		cName: 'Header__navbar-links-link'
 	},
 	{
-		label: 'Alumini',
-		path: '/alumini',
+		label: 'Membership',
+		path: '/membership',
 		cName: 'Header__navbar-links-link'
 	},
 

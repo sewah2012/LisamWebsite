@@ -10,16 +10,19 @@ import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import NewsDetails from './Pages/NewsDetails/NewsDetails';
 import Media from './Pages/Media/Media';
+import ScrollToTop from './Components/ScrollToTop';
+import Members from './Pages/Alumini/Members';
 
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/about-us' exact component={About} />
         <Route path='/media' exact component={Media} />
-        <Route path='/alumini' exact component={About} />
+        <Route path='/membership' exact component={Members} />
         <Route path='/contact' exact component={Contact} />
        
 

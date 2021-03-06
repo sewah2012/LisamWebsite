@@ -15,8 +15,8 @@ export const FooterLinks = [
 		cName: 'Header__navbar-links-link'
 	},
 	{
-		label: 'Alumini',
-		path: '/alumini',
+		label: 'Membership',
+		path: '/membership',
 		cName: 'Header__navbar-links-link'
 	},
 
@@ -32,3 +32,27 @@ export const FooterLinks = [
 		cName: 'Header__navbar-links-link'
 	},
 ];
+
+export const usefulLinks = [
+	{
+		label: 'study in Morocco',
+		path: '/study',
+		cName: 'Header__navbar-links-link'
+	},
+	{
+		label: 'Find Professionals',
+		path: '/hire',
+		cName: 'Header__navbar-links-link'
+	},
+	{
+		label: 'Life in Morocco',
+		path: '/life',
+		cName: 'Header__navbar-links-link'
+	},
+	{
+		label: 'AMCI Bourse',
+		path: '/bourse-amci',
+		cName: 'Header__navbar-links-link'
+	}
+];
+

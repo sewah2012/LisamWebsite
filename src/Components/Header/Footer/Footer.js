@@ -1,6 +1,6 @@
 import './Footer.css';
 import React from 'react';
-import { FooterLinks } from './FooterLinks';
+import { FooterLinks, usefulLinks } from './FooterLinks';
 import { Link } from 'react-router-dom';
 import FacebookIcon from '@material-ui/icons/Facebook';
 
@@ -30,18 +30,29 @@ const Footer = () => {
 						</div>
 					</div>
 				</div>
-				
+
 				<div className='footer__widget-links'>
-					<h2>-Important Links-</h2>
-					<ul className='footer__links'>
-						{FooterLinks.map((link, index) => (
-							<li className='footer__links-link'>
-								<Link to={link.path}>{link.label}</Link>
-							</li>
-						))}
-					</ul>
+					<div>
+						<h2>-Navigation-</h2>
+						<ul className='footer__links'>
+							{FooterLinks.map((link, index) => (
+								<li className='footer__links-link'>
+									<Link to={link.path}>{link.label}</Link>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<div><h2>-Useful Links-</h2>
+						<ul className='footer__links'>
+							{usefulLinks.map((link, index) => (
+								<li className='footer__links-link'>
+									<Link to={link.path}>{link.label}</Link>
+								</li>
+							))}
+						</ul></div>
 				</div>
-				
+
 				<div className='footer__widget-fb'>
 					<iframe
 						src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLiberian-Student-Association-In-Morocco-102390798420984&tabs=timeline&width=450&height=1500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2369188853102988"

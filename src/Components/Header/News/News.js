@@ -1,22 +1,40 @@
 import './News.css';
-import React from 'react'
+import React, { useEffect } from 'react'
 
-import {newsData} from '../../../newsTestData';
+
 import NewsItem from './NewsItem';
+import { useDispatch, useSelector } from 'react-redux';
+import { getNews } from '../../../Redux/actions/newsActions';
 const News = () => {
+	const dispatch = useDispatch()
+	const { loading, articles } = useSelector(state => state.data)
+
+	useEffect(() => {
+
+		return () => {
+			dispatch(getNews());
+		}
+	}, [dispatch])
 	return (
-		<div className='newsrow'>
-			{newsData.map((item)=>(
-				<NewsItem 
-					featuredImage={item.featuredImage}
-					description={item.description}
-					key={item.newsId}
-					newsId={item.newsId}
-					publishedAt={item.publishedAt}
-					className='newsrow__item'
-				/>
-			))}
-		</div>
+		<div>
+			{
+				loading ? < h1 > Loading News / articles </h1> : (
+					<div className='newsrow'>
+						{articles.map((item) => (
+							<NewsItem
+								featuredImage={item.imageUrl}
+								description={item.title}
+								key={item.newsId}
+								newsId={item.newsId}
+								publishedAt={item.createdAt}
+								owner={item.createdBy}
+								className='newsrow__item'
+							/>
+						))}
+					</div>
+				)
+}
+		</div >
 	)
 }
 

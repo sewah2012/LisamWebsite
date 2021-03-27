@@ -6,7 +6,7 @@ const Documents = () => {
 	return (
 		<div>
 			<Document
-				downloadSrc='/assets/docs/The-2016 Revised-LISAM-CONST-Final-Copy.pdf'
+				downloadSrc='https://firebasestorage.googleapis.com/v0/b/lisam-5c8b4.appspot.com/o/constitution.pdf?alt=media&token=c149fc21-131d-45cf-8f53-957d1d2d91f2'
 				docType='pdf'
 				docName='LISAM REVISED CONSTITUTION'
 			/>

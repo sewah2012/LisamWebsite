@@ -4,9 +4,10 @@
 
 .content >img{
 	width: 100%;
-	height: 600px;
-	margin: auto;
-	object-fit: cover;
+	/* height: 50rem; */
+	margin: 1rem;
+	object-fit: scale-down;
+	text-align: center;
 }
 
 .content__nav{
@@ -22,7 +23,7 @@
 .content >h2{
 	color: #1f3c88;
 	text-align: center;
-	margin-top: 1rem;
+	margin-top: .1rem;
 }
 
 @media screen and (max-width:600px){

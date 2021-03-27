@@ -1,11 +1,15 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
-import './Header.css';
+import './AdminHeader.css';
 import { MenuLinks } from './MenuLinks';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import { Button, IconButton } from '@material-ui/core';
+import { KeyboardReturn } from '@material-ui/icons';
+import { useDispatch } from 'react-redux';
+import { logoutUser } from '../../Redux/actions/userActions';
 const Header = () => {
+	const dispatch = useDispatch();
 	const [MenuOpen, setMenuOpen] = useState(false);
 
 	const toggleMenu=()=>setMenuOpen(!MenuOpen);
@@ -33,6 +37,10 @@ const Header = () => {
 							</Link>
 						</li>
 					))}
+
+					<IconButton onClick={()=>{dispatch(logoutUser())}}>
+						<KeyboardReturn fontSize='large' color='secondary'/>
+					</IconButton>
 				</ul>
 
 			</div>

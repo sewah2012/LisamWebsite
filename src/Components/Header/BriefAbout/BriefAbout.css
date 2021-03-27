@@ -40,10 +40,17 @@
 	.BriefAbout{
 		display: flex;
 		justify-content: center;
-		padding: .5rem 1rem;
-		align-items: flex-start;
+		padding: .5rem ;
+		align-items: center;
 		flex-wrap: wrap;
-	}	
+		flex-direction: column;
+	}
+	
+	.BriefAbout >img{
+		width: 75vw;
+		border-radius: 5px;
+		object-fit: contain;
+	}
 }
 
 

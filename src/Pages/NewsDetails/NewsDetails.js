@@ -9,6 +9,7 @@ import Content from './Content';
 
 const NewsDetails = () => {
 
+	
 	return (
 		<div>
 			<Header />

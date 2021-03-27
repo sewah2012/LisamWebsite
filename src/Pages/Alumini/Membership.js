@@ -15,8 +15,17 @@ const Membership = () => {
 						pursuing High Education in the Kingdom of Morocco a Member of the Liberian Students Association in Morocco.
 						However, any person has the rights to also make known or unknown their membership of the association. Currently the association bears the following numbers as active members.
 				</p>
-					<Button variant='contained'>Download Membership Form</Button>
-					<Button variant='contained' color='primary'> Fill online</Button>
+					<Button variant='contained'>
+						<a href='https://firebasestorage.googleapis.com/v0/b/lisam-5c8b4.appspot.com/o/membership_form.pdf?alt=media&token=5a104472-8159-4bd4-a4a0-fbca4621a7d4' target='_blank'>Download Membership Form</a>
+					</Button>
+					<Button variant='contained' color='primary'>
+						<a href='https://form.myjotform.com/203035435990555' target='_blank' >
+							Fill online
+					</a>
+					</Button>
+
+					
+
 				</div>
 			</div>
 

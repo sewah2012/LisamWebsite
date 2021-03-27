@@ -4,18 +4,30 @@ import { Link, useParams } from 'react-router-dom';
 
 import { newsData } from '../../newsTestData'
 import { Button } from '@material-ui/core';
+import { useDispatch, useSelector } from 'react-redux';
+import { getOneNews } from '../../Redux/actions/newsActions';
+
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 
 const Content = () => {
-	const { newsid } = useParams();
-	const [loading, setLoading] = useState(true);
+	// const [loading, setLoading] = useState(true);
+	dayjs.extend(relativeTime);
 	const [news, setnews] = useState(null);
+
+	const {newsid} = useParams();
+	const dispatch = useDispatch()
+	const {article} = useSelector(state => state.data);
+	const {loading} = useSelector(state => state.UI)
 
 
 
 	useEffect(() => {
-		const found = newsData.find((x) => x.newsId == newsid);
-		setnews(found);
-		setLoading(false);
+		// const found = newsData.find((x) => x.newsId == newsid);
+		// setnews(found);
+		// setLoading(false);
+
+		dispatch(getOneNews(newsid))
 
 		return () => {
 
@@ -31,12 +43,13 @@ const Content = () => {
 			</div>
 			{loading ? <h1>loading ...</h1> :
 				<div className='content'>
-					<img src={news?.featuredImage} alt='' />
-					<h2> {news?.description}</h2>
-					<h5>Published: {news?.publishedAt}</h5>
+					<img src={article?.imageUrl} alt='' />
+					<h2> {article?.title}</h2>
+					<h5>Published:  {dayjs(article?.createdAt).fromNow()}</h5>
+					<h5>BY: {article?.createdBy}</h5>
 
 					<p>
-						{news?.details}
+						{article?.body}
 					</p>
 				</div>}
 

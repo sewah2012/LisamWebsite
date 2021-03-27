@@ -27,8 +27,8 @@ export const FooterLinks = [
 	},
 
 	{
-		label: 'Documents',
-		path: '/media',
+		label: 'Admin Panel',
+		path: '/admin-panel',
 		cName: 'Header__navbar-links-link'
 	},
 ];

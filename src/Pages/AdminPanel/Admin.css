@@ -1,0 +1,29 @@
+
+.adminProfile{
+	border: 1px solid lightblue;
+	padding: 1rem;
+	margin: 1rem;
+}
+.dashboardBody{
+	padding: 1rem;
+	margin: 1rem;
+	border: 1px solid lightblue;
+
+}
+
+.AdminnewsRow{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 1rem;
+}
+
+.actionsButtons{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.postImage{
+	width: 60%;	
+}

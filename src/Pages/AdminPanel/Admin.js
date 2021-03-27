@@ -18,7 +18,7 @@ const Admin = () => {
 		return () => {
 			
 		}
-	}, [])
+	}, [dispatch])
 	return (
 		<div>
 

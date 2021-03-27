@@ -40,8 +40,8 @@ export const usefulLinks = [
 		cName: 'Header__navbar-links-link'
 	},
 	{
-		label: 'Find Professionals',
-		path: '/hire',
+		label: 'Graduates / Alumini',
+		path: '/alumini',
 		cName: 'Header__navbar-links-link'
 	},
 	{

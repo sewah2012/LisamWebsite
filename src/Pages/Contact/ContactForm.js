@@ -27,7 +27,7 @@ const ContactForm = () => {
 						</h4>
 
 						<div className='social_icons'>
-							<a href='https://www.facebook.com/Liberian-Student-Association-In-Morocco-102390798420984' target="_blank"><FacebookIcon fontSize="large" /></a>
+							<a href='https://www.facebook.com/Liberian-Student-Association-In-Morocco-102390798420984' target="_blank" rel='noreferrer'><FacebookIcon fontSize="large" />: <span>Liberia Students Association in Morocco</span></a>
 
 						</div>
 					</div>

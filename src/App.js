@@ -11,7 +11,7 @@ import Contact from './Pages/Contact/Contact';
 import NewsDetails from './Pages/NewsDetails/NewsDetails';
 import Media from './Pages/Media/Media';
 import ScrollToTop from './Components/ScrollToTop';
-import Members from './Pages/Alumini/Members';
+import Members from './Pages/Membership/Members';
 import Admin from './Pages/AdminPanel/Admin';
 
 import Secureroute from './utility/SecureRoute';
@@ -22,8 +22,10 @@ import jwtDecode from 'jwt-decode';
 import { getUserData, logoutUser } from './Redux/actions/userActions';
 import { SET_AUTHENTICATED } from './Redux/types';
 import axios from 'axios';
+import Study from './Pages/StudyInMorocco/Study';
+import Alumini from './Pages/Graduates/Alumini';
 
-
+axios.defaults.baseURL = 'https://us-central1-lisam-5c8b4.cloudfunctions.net/api';
 
 function App() {
   const {authenticated} = useSelector(state => state.user)
@@ -59,6 +61,8 @@ function App() {
         <Route path='/media' exact component={Media} />
         <Route path='/membership' exact component={Members} />
         <Route path='/contact' exact component={Contact} />
+        <Route path='/study' exact component={Study} />
+        <Route path='/alumini' exact component={Alumini} />
         <Route path='/login' exact component={Login} />
 
         <Secureroute path='/admin-panel' exact authenticated={authenticated} component={Admin} />

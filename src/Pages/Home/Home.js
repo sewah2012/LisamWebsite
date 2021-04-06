@@ -7,6 +7,7 @@ import InfoSection from '../../Components/Header/InfoSection/InfoSection';
 import Publications from '../../Components/Header/Publications/Publications';
 import Partners from '../../Components/Header/Partners/Partners';
 import Footer from '../../Components/Header/Footer/Footer';
+// import HeaderNav from '../../Components/Header/HeaderNav';
 
 const Home = () => {
 	return (

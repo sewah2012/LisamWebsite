@@ -24,6 +24,10 @@ import { SET_AUTHENTICATED } from './Redux/types';
 import axios from 'axios';
 import Study from './Pages/StudyInMorocco/Study';
 import Alumini from './Pages/Graduates/Alumini';
+import NewsP from './Pages/Media/NewsP';
+import Library from './Pages/Media/Library';
+import Gallery from './Pages/Media/Gallery';
+import Universitites from './Pages/StudyInMorocco/Universitites';
 
 axios.defaults.baseURL = 'https://us-central1-lisam-5c8b4.cloudfunctions.net/api';
 
@@ -61,10 +65,20 @@ function App() {
         <Route path='/media' exact component={Media} />
         <Route path='/membership' exact component={Members} />
         <Route path='/contact' exact component={Contact} />
+        
         <Route path='/study' exact component={Study} />
+        <Route path='/study/universities' exact component={Universitites} />
+        
+        
         <Route path='/alumini' exact component={Alumini} />
+        
         <Route path='/login' exact component={Login} />
+        
+        <Route path='/media/news' exact component={NewsP} />
+        <Route path='/media/library' exact component={Library} />
+        <Route path='/media/gallery' exact component={Gallery} />
 
+        {/* secure routes */}
         <Secureroute path='/admin-panel' exact authenticated={authenticated} component={Admin} />
        
 

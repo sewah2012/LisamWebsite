@@ -6,6 +6,7 @@ import Footer from '../../Components/Header/Footer/Footer';
 import MediaBody from './MediaBody';
 
 const Media = () => {
+	
 	return (
 		<div>
 			<Header />

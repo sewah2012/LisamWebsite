@@ -1,0 +1,9 @@
+.NewsP>h1{
+	margin: 1rem;
+}
+
+.NewsP__details{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}

@@ -17,3 +17,8 @@ export const LOADING_DATA = 'LOADING_DATA';
 export const DELETE_NEWS = 'DELETE_NEWS';
 export const POST_NEWS = 'POST_NEWS';
 
+//alumini types 
+
+export const SET_AlUMINI = 'SET_AlUMINI';
+
+

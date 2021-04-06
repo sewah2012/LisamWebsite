@@ -1,9 +1,10 @@
-import { DELETE_NEWS, LOADING_DATA, POST_NEWS, SET_NEWS_ARTICLE, SET_NEWS_ARTICLES } from "../types";
+import { DELETE_NEWS, LOADING_DATA, POST_NEWS, SET_AlUMINI, SET_NEWS_ARTICLE, SET_NEWS_ARTICLES } from "../types";
 
 const initState = {
 	articles: [],
 	article:{},
-	loading: false
+	loading: false,
+	alumini:[]
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -41,6 +42,13 @@ export default function (state = initState, action) {
 			return {
 				...state,
 				// screams: state.screams.filter((scream) => scream.screamId !== action.payload )
+			}
+		
+		case SET_AlUMINI:
+			return {
+				...state,
+				alumini: action.payload,
+				loading: false
 			}
 		default:
 			return state;

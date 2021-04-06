@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CLEAR_ERRORS, DELETE_NEWS, LOADING_DATA, LOADING_UI, POST_NEWS, SET_ERRORS, SET_NEWS_ARTICLE, SET_NEWS_ARTICLES, STOP_LOADING_UI } from "../types";
+import { SET_AlUMINI,CLEAR_ERRORS, DELETE_NEWS, LOADING_DATA, LOADING_UI, POST_NEWS, SET_ERRORS, SET_NEWS_ARTICLE, SET_NEWS_ARTICLES, STOP_LOADING_UI } from "../types";
 
 
 export const postNews = (newNews, handleClose) => async (dispatch) => {
@@ -75,4 +75,18 @@ export const editNews=(newsId,data,handleClose)=>(dispatch)=>{
 		handleClose();
 	})
 	.catch(err=>console.log(err));
+}
+
+
+// alumini data ..... 
+
+export const getAlumini=()=>(dispatch)=>{
+	dispatch({type:LOADING_DATA});
+	axios.get('/alumini')
+	.then(res => {
+		dispatch({ type: SET_AlUMINI, payload: res.data });
+	})
+	.catch(err => {
+		dispatch({ type: SET_AlUMINI, payload: [] });
+	})
 }

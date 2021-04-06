@@ -11,8 +11,8 @@ const Membership = () => {
 				<img src='/assets/imgs/memberships.jpg' alt='membership' />
 				<div className='membership__info-details'>
 					<p>
-						The Liberian Student Association in Morocco consider every Liberian citizen
-						pursuing High Education in the Kingdom of Morocco a Member of the Liberian Students Association in Morocco.
+						The Liberian Student Association in Morocco considers every Liberian citizen
+						pursuing higher Education in the Kingdom of Morocco as a Member of the Association.
 						However, any person has the rights to also make known or unknown their membership of the association. Currently the association bears the following numbers as active members.
 				</p>
 					<Button variant='contained'>

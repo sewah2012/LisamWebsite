@@ -28,6 +28,8 @@ import NewsP from './Pages/Media/NewsP';
 import Library from './Pages/Media/Library';
 import Gallery from './Pages/Media/Gallery';
 import Universitites from './Pages/StudyInMorocco/Universitites';
+import Courses from './Pages/StudyInMorocco/Courses';
+import AboutAlumini from './Pages/Graduates/AboutAlumini';
 
 axios.defaults.baseURL = 'https://us-central1-lisam-5c8b4.cloudfunctions.net/api';
 
@@ -67,16 +69,19 @@ function App() {
         <Route path='/contact' exact component={Contact} />
         
         <Route path='/study' exact component={Study} />
-        <Route path='/study/universities' exact component={Universitites} />
+        <Route path='/study-universities' exact component={Universitites} />
+        <Route path='/study-courses' exact component={Courses} />
         
         
         <Route path='/alumini' exact component={Alumini} />
+        <Route path='/alumini-about' exact component={AboutAlumini} />
+        
         
         <Route path='/login' exact component={Login} />
         
-        <Route path='/media/news' exact component={NewsP} />
-        <Route path='/media/library' exact component={Library} />
-        <Route path='/media/gallery' exact component={Gallery} />
+        <Route path='/media-news' exact component={NewsP} />
+        <Route path='/library' exact component={Library} />
+        <Route path='/gallery' exact component={Gallery} />
 
         {/* secure routes */}
         <Secureroute path='/admin-panel' exact authenticated={authenticated} component={Admin} />

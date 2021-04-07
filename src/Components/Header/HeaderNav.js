@@ -11,20 +11,22 @@ const study = [
 	{
 		id: 1,
 		name: 'Public Universities',
-		link: '/study/universities',
+		link: '/study-universities',
 		cName: 'menu-item',
 	},
 	{
 		id: 2,
 		name: 'Courses',
-		link: '/study/courses',
+		link: 'http://maroc-concourat.blogspot.com/2014/03/filieres-accreditees.html',
 		cName: 'menu-item',
+		out:true
 	},
 	{
 		id: 3,
 		name: 'TVET  ',
-		link: '/study/TVET',
+		link: 'https://www.ofppt.ma/fr/formations-diplomantes',
 		cName: 'menu-item',
+		out:true
 	},
 ]
 const about = [
@@ -46,13 +48,19 @@ const alumini = [
 	{
 		id: 1,
 		name: 'about-alumini',
-		link: '/alumini/about',
+		link: '/alumini-about',
 		cName: 'menu-item',
 	},
 	{
 		id: 2,
+		name: 'Leadership',
+		link: '/alumini-about#staff',
+		cName: 'menu-item',
+	},
+	{
+		id: 3,
 		name: 'Members',
-		link: '/alumini/members',
+		link: '/alumini',
 		cName: 'menu-item',
 	}
 ]
@@ -60,20 +68,20 @@ const alumini = [
 const services = [
 	{
 		id: 1,
-		name: 'Visa Application',
+		name: 'Medical Service',
 		link: '/services/visa',
 		cName: 'menu-item',
 	},
 	{
 		id: 2,
-		name: 'Passport Application',
-		link: '/services/passport',
+		name: 'Academics  ',
+		link: '/services/academics',
 		cName: 'menu-item',
 	},
 	{
 		id: 3,
-		name: 'Register Citizen  ',
-		link: '/services/citizen',
+		name: 'Allowances',
+		link: '/services/allowances',
 		cName: 'menu-item',
 	},
 ]
@@ -82,19 +90,20 @@ const media = [
 	{
 		id: 1,
 		name: 'News / Events',
-		link: '/media/news',
+		link: '/media-news',
 		cName: 'menu-item',
 	},
 	{
 		id: 2,
 		name: 'Publication / Library',
-		link: '/media/library',
+		link: '/library',
 		cName: 'menu-item',
+		
 	},
 	{
 		id: 3,
 		name: 'Photo Gallery',
-		link: '/media/gallery',
+		link: '/gallery',
 		cName: 'menu-item',
 	},
 ]

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import './Header.css';
-import { MenuLinks } from './MenuLinks';
-import MenuIcon from '@material-ui/icons/Menu';
-import CloseIcon from '@material-ui/icons/Close';
-import { Button, IconButton } from '@material-ui/core';
 import HeaderNav from './HeaderNav';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import YouTubeIcon from '@material-ui/icons/YouTube';
 
 
 const Header = () => {
@@ -26,20 +26,14 @@ const Header = () => {
 
 
 				<div className='Header__navbar'>
-					<ul className={MenuOpen?'Header__navbar-links active':'Header__navbar-links'}>
-		{MenuLinks.map((link, index) => (
-			<li
-				key={index}
-				className={link.cName}
-			>
-				<Link to={link.path} activeStye={{ color: "brown" }}>
-					{link.label}
-				</Link>
-			</li>
-		))}
-	</ul>
-					
-
+					<div className='Header__navbar-social'>
+						<a href='https://www.facebook.com/Liberian-Student-Association-In-Morocco-102390798420984' target="_blank"><FacebookIcon fontSize="large" /></a>
+						<a href='https://www.facebook.com/Liberian-Student-Association-In-Morocco-102390798420984' target="_blank"><InstagramIcon fontSize="large" /></a>
+						<a href='https://www.facebook.com/Liberian-Student-Association-In-Morocco-102390798420984' target="_blank"><YouTubeIcon fontSize="large" /></a>
+					</div>
+					<div className='Header__navbar-admin'>
+						<Link to='/login'><AccountBoxIcon fontSize='large' /></Link>
+					</div>
 				</div>
 
 

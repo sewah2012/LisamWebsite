@@ -40,7 +40,17 @@
 
 
 .Header__navbar{
-	float: 1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	color: white;
+}
+
+.Header__navbar-social{
+	margin-right: 2rem;
+	border-right: 2px solid  gray;
+	color: whitesmoke;
+
 }
 
 .Header__navbar-links{

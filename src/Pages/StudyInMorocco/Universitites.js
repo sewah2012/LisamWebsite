@@ -9,7 +9,7 @@ const Universitites = () => {
 	return (
 		<div>
 			<Header />
-			<Banner title='Public Universities in Morocco' image='/assets/imgs/study.jpg' />
+			<Banner title='Public Universities in Morocco' image='https://www.moroccoworldnews.com/wp-content/uploads/2019/06/Moroccan-Universities-Absent-from-Top-1000-Best-in-the-World.png	' />
 			<h1>List of Universities in Morocco</h1>
 			<div className='universities'> 
 				<table>

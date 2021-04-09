@@ -57,7 +57,7 @@ const useStyles = makeStyles({
 		width: '100%',
 	},
 	container: {
-		maxHeight: 440,
+		maxHeight: 'fit-content',
 	},
 });
 
@@ -125,7 +125,7 @@ export default function AluminiData() {
 					<TablePagination
 						rowsPerPageOptions={[10, 25, 100]}
 						component="div"
-						count={rows.length}
+						count={alumini.length}
 						rowsPerPage={rowsPerPage}
 						page={page}
 						onChangePage={handleChangePage}

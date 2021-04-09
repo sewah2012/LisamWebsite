@@ -5,28 +5,36 @@ import CloseIcon from '@material-ui/icons/Close';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link } from 'react-router-dom';
 import DropDown from './DropDown';
+import { IconButton } from '@material-ui/core';
 
 
-const study = [
+const study = [	
+	{
+		id: 4,
+		name: 'Scholarships in Morocco',
+		link: '/study-scholarship',
+		cName: 'menu-item'
+	},
 	{
 		id: 1,
 		name: 'Public Universities',
 		link: '/study-universities',
 		cName: 'menu-item',
 	},
+
 	{
 		id: 2,
 		name: 'Courses',
 		link: 'http://maroc-concourat.blogspot.com/2014/03/filieres-accreditees.html',
 		cName: 'menu-item',
-		out:true
+		out: true
 	},
 	{
 		id: 3,
 		name: 'TVET  ',
 		link: 'https://www.ofppt.ma/fr/formations-diplomantes',
 		cName: 'menu-item',
-		out:true
+		out: true
 	},
 ]
 const about = [
@@ -59,7 +67,7 @@ const alumini = [
 	},
 	{
 		id: 3,
-		name: 'Members',
+		name: 'Alumini Members / Graduates',
 		link: '/alumini',
 		cName: 'menu-item',
 	}
@@ -98,7 +106,7 @@ const media = [
 		name: 'Publication / Library',
 		link: '/library',
 		cName: 'menu-item',
-		
+
 	},
 	{
 		id: 3,
@@ -189,38 +197,63 @@ const HeaderNav = () => {
 				</li>
 
 				<li className='nav-item' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-					<Link to='/about-us' className='nav-links' onClick={closeMenu} >
-						About <ExpandMoreIcon />
+					<Link to='/about-us' className='nav-links' >
+						<div onClick={closeMenu} >
+							About
+						</div>
+						<IconButton onClick={onMouseEnter}>
+							<ExpandMoreIcon fontSize='large'/>
+						</IconButton>
 					</Link>
+
 					{dropDown && <DropDown items={about} />}
 				</li>
 
 
 
 				<li className='nav-item' onMouseEnter={onMouseEnterServices} onMouseLeave={onMouseLeaveServices}>
-					<Link to='/services' className='nav-links' onClick={closeMenu} >
-						Student services <ExpandMoreIcon />
+					<Link to='/services' className='nav-links' >
+						<div onClick={closeMenu} >
+							Student Services
+						</div>						
+						<IconButton onClick={onMouseEnterServices}>
+							<ExpandMoreIcon fontSize='large' />
+						</IconButton>
 					</Link>
 					{dropServices && <DropDown items={services} />}
 				</li>
 
 				<li className='nav-item' onMouseEnter={onMouseEnterStudy} onMouseLeave={onMouseLeaveStudy}>
-					<Link to='/study' className='nav-links'  onClick={closeMenu} >
-						Study in Morocco <ExpandMoreIcon />
+					<Link to='/study' className='nav-links'  >
+						<div onClick={closeMenu} >
+							Study In Morocco
+						</div>
+						<IconButton onClick={onMouseEnterStudy}>
+							<ExpandMoreIcon fontSize='large'/>
+						</IconButton>
 					</Link>
 					{dropStudy && <DropDown items={study} />}
 				</li>
 
 				<li className='nav-item' onMouseEnter={onMouseEnterAbout} onMouseLeave={onMouseLeaveAbout}>
-					<Link to='/alumini' className='nav-links' onClick={closeMenu} >
-						Alumini <ExpandMoreIcon />
+					<Link to='/alumini' className='nav-links' >
+						<div onClick={closeMenu} >
+							Alumini
+						</div> <IconButton onClick={onMouseEnterAbout}>
+							<ExpandMoreIcon fontSize='large'/>
+						</IconButton>
 					</Link>
 					{dropAbout && <DropDown items={alumini} />}
 				</li>
 
 				<li className='nav-item' onMouseEnter={onMouseEnterMedia} onMouseLeave={onMouseLeaveMedia}>
-					<Link to='/media' className='nav-links' onClick={closeMenu} >
-						Media <ExpandMoreIcon />
+					<Link to='/media' className='nav-links' >
+						<div onClick={closeMenu} >
+							Media
+						</div> 
+						<IconButton onClick={onMouseEnterMedia}>
+							<ExpandMoreIcon fontSize='large's/>
+						</IconButton>
 					</Link>
 					{dropMedia && <DropDown items={media} />}
 				</li>

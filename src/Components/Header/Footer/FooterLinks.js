@@ -45,8 +45,8 @@ export const usefulLinks = [
 		cName: 'Header__navbar-links-link'
 	},
 	{
-		label: 'Life in Morocco',
-		path: '/life',
+		label: 'Scholarship in Morocco',
+		path: '/study-scholarship',
 		cName: 'Header__navbar-links-link'
 	},
 	{

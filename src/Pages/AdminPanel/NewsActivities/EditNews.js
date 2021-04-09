@@ -51,10 +51,6 @@ const EditNews = ({ news }) => {
 	const handleClose = () => {
 		dispatch({ type: CLEAR_ERRORS })
 		setOpen(false);
-		setNewPost({
-			body: '',
-			title: ''
-		});
 		setUpload(null)
 		setNewPost({
 			body: news.body,

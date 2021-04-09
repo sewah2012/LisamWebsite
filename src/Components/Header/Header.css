@@ -46,6 +46,10 @@
 	color: white;
 }
 
+.Header__navbar-admin{
+	color: whitesmoke;
+}
+
 .Header__navbar-social{
 	margin-right: 2rem;
 	border-right: 2px solid  gray;
@@ -90,7 +94,7 @@
 	}
 
 	.Header__brand{
-		width: 50%;
+		width: 40%;
 	}
 	.Header__brand >h1{
 		color: #ffffff;
@@ -133,6 +137,14 @@
 		display: table;
 		width: 80%;
 
+		}
+
+		.Header__navbar{
+			display: flex;
+			flex-direction: column-reverse;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			color: white;
 		}
 
 }

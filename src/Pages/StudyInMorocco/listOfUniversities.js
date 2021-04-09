@@ -73,6 +73,12 @@ export  const listOfUniversities =[
 		name:'Ibn Tofail University',
 		location:'Kenitra',
 		website: "https://www.uit.ac.ma/",
+	},
+	{
+		uID: 14,
+		name:'Université Hassan 1er de Settat',
+		location:'Settat',
+		website: "http://www.uh1.ac.ma/",
 	}
 	
 	

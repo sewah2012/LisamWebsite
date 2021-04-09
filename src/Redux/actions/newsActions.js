@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SET_AlUMINI,CLEAR_ERRORS, DELETE_NEWS, LOADING_DATA, LOADING_UI, POST_NEWS, SET_ERRORS, SET_NEWS_ARTICLE, SET_NEWS_ARTICLES, STOP_LOADING_UI } from "../types";
+import { SET_AlUMINI,CLEAR_ERRORS, DELETE_NEWS, LOADING_DATA, LOADING_UI, POST_NEWS, SET_ERRORS, SET_NEWS_ARTICLE, SET_NEWS_ARTICLES, STOP_LOADING_UI, ADD_ALUMINI, DELETE_ALUMINI } from "../types";
 
 
 export const postNews = (newNews, handleClose) => async (dispatch) => {
@@ -89,4 +89,54 @@ export const getAlumini=()=>(dispatch)=>{
 	.catch(err => {
 		dispatch({ type: SET_AlUMINI, payload: [] });
 	})
+}
+
+export const addAlumini = (newAlumini, handleClose) => async (dispatch) => {
+	dispatch({ type: LOADING_UI });
+
+	await axios.post('/alumini', newAlumini)
+		.then(res => {
+			dispatch({
+				type: ADD_ALUMINI,
+				payload: res.data
+			});
+
+			dispatch({
+				type: CLEAR_ERRORS,
+			});
+
+			handleClose();
+		})
+		.catch(err => {
+			dispatch({
+				type: SET_ERRORS,
+				payload: err.response.data
+			});
+		})
+}
+
+export const deleteAlumini = (aluminiID, handleClose)=>(dispatch)=>{
+	axios
+	  .get(`delete/alumini/${aluminiID}`)
+	  .then(res=>{
+		  console.log(res.data)
+		  dispatch({
+			  type:DELETE_ALUMINI,
+			  payload:aluminiID
+		  });
+
+		  handleClose();
+
+	  })
+}
+
+export const editAlumini=(aluminiID,data,handleClose)=>(dispatch)=>{
+	dispatch({type:LOADING_UI});
+	axios.post(`/edit/alumini/${aluminiID}`, data)
+	.then((res)=>{
+		// console.log(res);
+		dispatch(getAlumini());
+		handleClose();
+	})
+	.catch(err=>console.log(err));
 }

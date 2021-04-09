@@ -20,5 +20,8 @@ export const POST_NEWS = 'POST_NEWS';
 //alumini types 
 
 export const SET_AlUMINI = 'SET_AlUMINI';
+export const ADD_ALUMINI = 'ADD_ALUMINI';
+export const MODIFY_ALUMINI = 'MODIFY_ALUMINI';
+export const DELETE_ALUMINI = 'DELETE_ALUMINI';
 
 

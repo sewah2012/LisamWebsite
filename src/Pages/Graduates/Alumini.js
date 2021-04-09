@@ -13,7 +13,7 @@ const Alumini = () => {
 			<div className='alumini__body'>
 				<h1>List Morocco-Liberia Bilateral Scholarship Program Alumini</h1>
 				<p>
-					The Morocco - Liberia Bilateral Scholarship program since 1987 has produced a number of 
+					The Morocco - Liberia Bilateral Scholarship program since 1989 has produced a number of 
 					highly trained Liberian professionals in several different significant disciplines which 
 					and are participating in the national building process of Liberia. The below table outlines all 
 					scholars that acquired their professionals and technial training in the Kingdom under the auspices of the 

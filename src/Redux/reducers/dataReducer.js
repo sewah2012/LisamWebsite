@@ -1,4 +1,4 @@
-import { DELETE_NEWS, LOADING_DATA, POST_NEWS, SET_AlUMINI, SET_NEWS_ARTICLE, SET_NEWS_ARTICLES } from "../types";
+import { ADD_ALUMINI, DELETE_ALUMINI,DELETE_NEWS, LOADING_DATA, POST_NEWS, SET_AlUMINI, SET_NEWS_ARTICLE, SET_NEWS_ARTICLES } from "../types";
 
 const initState = {
 	articles: [],
@@ -30,6 +30,7 @@ export default function (state = initState, action) {
 					...state.articles
 				]
 			}
+
 		
 		case SET_NEWS_ARTICLE:
 			return{
@@ -49,6 +50,21 @@ export default function (state = initState, action) {
 				...state,
 				alumini: action.payload,
 				loading: false
+			}
+		case ADD_ALUMINI: 
+			return{
+				...state,
+				alumini: [
+					action.payload,
+					...state.alumini
+				]
+			}
+		case DELETE_ALUMINI:
+			var position = state.alumini.findIndex(a=>a.aluminiID===action.payload);
+			state.alumini.splice(position,1);
+			return {
+				...state,
+				// screams: state.screams.filter((scream) => scream.screamId !== action.payload )
 			}
 		default:
 			return state;

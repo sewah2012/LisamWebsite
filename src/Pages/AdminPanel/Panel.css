@@ -1,0 +1,9 @@
+.panel__menu{
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.panel__menu-item{
+	margin: .5rem;
+}

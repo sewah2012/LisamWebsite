@@ -12,7 +12,6 @@ import NewsDetails from './Pages/NewsDetails/NewsDetails';
 import Media from './Pages/Media/Media';
 import ScrollToTop from './Components/ScrollToTop';
 import Members from './Pages/Membership/Members';
-import Admin from './Pages/AdminPanel/Admin';
 
 import Secureroute from './utility/SecureRoute';
 import Login from './Pages/Login';
@@ -30,12 +29,13 @@ import Gallery from './Pages/Media/Gallery';
 import Universitites from './Pages/StudyInMorocco/Universitites';
 import Courses from './Pages/StudyInMorocco/Courses';
 import AboutAlumini from './Pages/Graduates/AboutAlumini';
+import Scholarships from './Pages/StudyInMorocco/Scholarships';
+import Panel from './Pages/AdminPanel/Panel';
 
 axios.defaults.baseURL = 'https://us-central1-lisam-5c8b4.cloudfunctions.net/api';
 
 function App() {
   const {authenticated} = useSelector(state => state.user)
-
   const token = localStorage.FBIdToken;
   const dispatch = useDispatch();
 
@@ -44,12 +44,12 @@ function App() {
       const decodedToken = jwtDecode(token);
       // console.log(decodedToken);
       if (decodedToken.exp * 1000 < Date.now()) {
-        dispatch(logoutUser);
+        dispatch(logoutUser());
         window.location.href = '/login'; //redirects users to homepage
       } else {
         dispatch({ type: SET_AUTHENTICATED });
         axios.defaults.headers.common['Authorization'] = token;
-        dispatch(getUserData);
+        dispatch(getUserData());
       }
     }
 
@@ -71,7 +71,7 @@ function App() {
         <Route path='/study' exact component={Study} />
         <Route path='/study-universities' exact component={Universitites} />
         <Route path='/study-courses' exact component={Courses} />
-        
+        <Route path='/study-scholarship' exact component={Scholarships} />
         
         <Route path='/alumini' exact component={Alumini} />
         <Route path='/alumini-about' exact component={AboutAlumini} />
@@ -84,7 +84,7 @@ function App() {
         <Route path='/gallery' exact component={Gallery} />
 
         {/* secure routes */}
-        <Secureroute path='/admin-panel' exact authenticated={authenticated} component={Admin} />
+        <Secureroute path='/admin-panel' exact authenticated={authenticated} component={Panel} />
        
 
         <Route path="/media/news/:newsid" exact component={NewsDetails} />

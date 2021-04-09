@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 import './Header.css';
 import HeaderNav from './HeaderNav';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
+import { Button } from '@material-ui/core';
 
 
 const Header = () => {
-	const [MenuOpen, setMenuOpen] = useState(false);
+	// const [MenuOpen, setMenuOpen] = useState(false);
 
-	const toggleMenu = () => setMenuOpen(!MenuOpen);
+	// const toggleMenu = () => setMenuOpen(!MenuOpen);
 	return (
 		<div>
 			<div className='Header'>
@@ -27,12 +27,12 @@ const Header = () => {
 
 				<div className='Header__navbar'>
 					<div className='Header__navbar-social'>
-						<a href='https://www.facebook.com/Liberian-Student-Association-In-Morocco-102390798420984' target="_blank"><FacebookIcon fontSize="large" /></a>
-						<a href='https://www.facebook.com/Liberian-Student-Association-In-Morocco-102390798420984' target="_blank"><InstagramIcon fontSize="large" /></a>
-						<a href='https://www.facebook.com/Liberian-Student-Association-In-Morocco-102390798420984' target="_blank"><YouTubeIcon fontSize="large" /></a>
+						<a href='https://www.facebook.com/Liberian-Student-Association-In-Morocco-102390798420984' target="_blank"><FacebookIcon fontSize="medium" /></a>
+						<a href='https://www.facebook.com/Liberian-Student-Association-In-Morocco-102390798420984' target="_blank"><InstagramIcon fontSize="medium" /></a>
+						<a href='https://www.facebook.com/Liberian-Student-Association-In-Morocco-102390798420984' target="_blank"><YouTubeIcon fontSize="medium" /></a>
 					</div>
 					<div className='Header__navbar-admin'>
-						<Link to='/login'><AccountBoxIcon fontSize='large' /></Link>
+						<Link to='/login'><Button color='secondary' variaint='contained'>Sign in</Button></Link>
 					</div>
 				</div>
 

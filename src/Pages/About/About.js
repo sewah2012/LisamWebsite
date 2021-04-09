@@ -17,12 +17,25 @@ const About = () => {
 					<p>
 						LISAM is the acronym for the Liberian Students Association in Morocco.
 						It is an association charged with the responsibility of steering the affairs of
-						Liberian scholars in Morocco.
-						The Association was founded in the year 1987 by the first group of Liberian Scholars to pursue higher Education
-						in The Kingdom of Morocco. Since its inception, the organization has ensured the success of many young Liberian scholars
-						who sought higher Education in Morocco.
+						Liberian scholars in Morocco. <br /> <br />
+
+						The Liberian Students Association in Morocco (LISAM) is the association of the 
+						Liberia international Trainers and Trainees in the Kingdom of Morocco aiming at promoting 
+						sound Education for the future of Liberia. <br /> <br />
+
+						Since the birth of LISAM, August 30, 1989, it remains with the Motto: “Unity, Cooperation and strive for Educational 
+						Success”.  LISAM has, over the time sent back to Liberia, professional high educated Liberians 
+						in various fields of studies through the Morocco –Liberia bilateral scholarship program. <br /> <br />
+
+						LISAM is proud with the testimonies of Alumni seen back home at the 
+						peak of Liberia development programs.  We say with one voice, that we shall move forward Liberia and will make her, 
+						one day, one of the developed nations in the world. <br /> <br />
+
+
 						The Liberian Students Association in Morocco is strictly a student based organization and as such is not involved in any
 						political or its related activities both in Morocco and Liberia.
+
+						
 					</p>
 				</div>
 

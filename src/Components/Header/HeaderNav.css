@@ -11,7 +11,9 @@
 .nav-menu {
 	display: flex;
 	list-style: none;
-	padding: 1rem;
+	/* padding: 1rem; */
+	align-items: center;
+	justify-content: space-evenly;
 	
 }
 
@@ -20,6 +22,10 @@
 	text-decoration: none;
 	padding: 0.5rem 1rem;
 	text-transform: uppercase;
+	/* margin: .5rem; */
+	display: flex;
+	align-items: center;
+	
 }
 
 .nav-links:hover{
@@ -54,14 +60,23 @@
 		  display: flex;
 		  flex-direction: column;
 		  width: 90%;
-		  height: 90vh;
+		  height: fit-content;
 		  position: absolute;
 		  top: 80px;
 		  left: -100%;
 		  opacity: 1;
 		  transition: all 0.5s ease;
+		  align-items: flex-start;
 		}
-	  
+/* 	  
+		.nav-menu {
+			display: flex;
+			list-style: none;
+			padding: 1rem;
+			align-items: center;
+			justify-content: space-evenly;
+			
+		} */
 		.nav-menu.active {
 		  background: #242222;
 		  left: 0;
@@ -72,10 +87,18 @@
 	  
 		.nav-links {
 		  text-align: center;
-		  padding: 2rem;
-		  width: 80%;
+		  padding: 1rem;
+		  /* width: 80%; */
 		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
 		  
+		}
+
+		.nav-links>:last-child{
+			padding:1rem;
+			background-color:lightblue;
+			margin-left: 3rem;
 		}
 	  
 		.nav-links:hover {

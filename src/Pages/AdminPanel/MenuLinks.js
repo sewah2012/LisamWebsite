@@ -1,7 +1,7 @@
 export const MenuLinks = [
 	{
-		label: 'Dashboard',
-		path: '/admin-panel',
+		label: 'Home',
+		path: '/',
 		cName: 'Header__navbar-links-link'
 	},
 	{

@@ -4,20 +4,41 @@ import React, { useState } from 'react';
 import AdminHeader from './AdminHeader';
 import NewsPanel from './NewsActivities/NewsPanel';
 import AluminiPanel from './AluminiActivities/AluminiPanel';
+import UsersPanel from './UserActivities/UsersPanel';
+import Menu from './LeadershipActivities/Menu';
 
 
 const Panel = () => {
-	const [newsOpen, setNewsOpen] = useState(false);
+	const [newsOpen, setNewsOpen] = useState(true);
 	const [aluminiOpen, setAluminiOpen] = useState(false);
+	const [userOpen, setUserOpen] = useState(false);
+	const [leadersOpen, setLeadersOpen] = useState(false)
 
+	const setUserView=()=>{
+		setAluminiOpen(false);
+		setNewsOpen(false);
+		setUserOpen(true)
+		setLeadersOpen(false)
+	}
 	const setNewsView=()=>{
 		setAluminiOpen(false);
+		setUserOpen(false)
+		setLeadersOpen(false)
 		setNewsOpen(true);
 	}
 
 	const setAluminiView=()=>{
 		setAluminiOpen(true);
 		setNewsOpen(false);
+		setUserOpen(false);
+		setLeadersOpen(false);
+	}
+
+	const setLeadersView = ()=>{
+		setAluminiOpen(false);
+		setNewsOpen(false);
+		setUserOpen(false)
+		setLeadersOpen(true)
 	}
 
 	return (
@@ -26,7 +47,8 @@ const Panel = () => {
 			<Grid container spacing={16}>
 				<Grid item sm={4} xs={12}>
 					<div className='adminProfile'>
-						<h1>Profile </h1>
+						<h1>SITE MANAGEMENT CONSOLE </h1><br />
+						<h5>Click on the Menu to perform an operation</h5>
 					</div>
 
 					<div className='panel__menu'>
@@ -38,11 +60,11 @@ const Panel = () => {
 						</div>
 
 						<div className='panel__menu-item'>
-							<Button variant='contained' fullWidth color='primary'>Leadership</Button>
+							<Button onClick={setLeadersView} variant='contained' fullWidth color='primary'>Leadership</Button>
 						</div>
 
 						<div className='panel__menu-item'>
-							<Button variant='contained' fullWidth color='primary'>Users</Button>
+							<Button onClick={setUserView} variant='contained' fullWidth color='primary'>Users</Button>
 						</div>
 
 
@@ -52,6 +74,8 @@ const Panel = () => {
 					<div className='dashboardBody'>
 						{ newsOpen && <NewsPanel />}
 						{ aluminiOpen && <AluminiPanel />}
+						{userOpen && <UsersPanel />}
+						{leadersOpen && <Menu />}
 						
 					</div>
 				</Grid>

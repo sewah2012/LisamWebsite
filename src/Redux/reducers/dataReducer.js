@@ -1,10 +1,13 @@
-import { ADD_ALUMINI, DELETE_ALUMINI,DELETE_NEWS, LOADING_DATA, POST_NEWS, SET_AlUMINI, SET_NEWS_ARTICLE, SET_NEWS_ARTICLES } from "../types";
+import { ADD_ALUMINI, ADD_CHAIRMAN, ADD_LEADER, DELETE_ALUMINI, DELETE_CHAIRMAN, DELETE_NEWS, LOADING_DATA, POST_NEWS, SET_AlUMINI, SET_CHAIRMAN, SET_LEADERS, SET_NEWS_ARTICLE, SET_NEWS_ARTICLES } from "../types";
 
 const initState = {
 	articles: [],
-	article:{},
+	article: {},
 	loading: false,
-	alumini:[]
+	alumini: [],
+	leaders: [],
+	pastLeaders: [],
+	chairman: [],
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -21,9 +24,9 @@ export default function (state = initState, action) {
 				articles: action.payload,
 				loading: false
 			}
-		
+
 		case POST_NEWS:
-			return{
+			return {
 				...state,
 				articles: [
 					action.payload,
@@ -31,28 +34,28 @@ export default function (state = initState, action) {
 				]
 			}
 
-		
+
 		case SET_NEWS_ARTICLE:
-			return{
+			return {
 				...state,
-				article:action.payload
+				article: action.payload
 			}
 		case DELETE_NEWS:
-			var pos = state.articles.findIndex(news=>news.newsId===action.payload);
-			state.articles.splice(pos,1);
+			var pos = state.articles.findIndex(news => news.newsId === action.payload);
+			state.articles.splice(pos, 1);
 			return {
 				...state,
 				// screams: state.screams.filter((scream) => scream.screamId !== action.payload )
 			}
-		
+
 		case SET_AlUMINI:
 			return {
 				...state,
 				alumini: action.payload,
 				loading: false
 			}
-		case ADD_ALUMINI: 
-			return{
+		case ADD_ALUMINI:
+			return {
 				...state,
 				alumini: [
 					action.payload,
@@ -60,8 +63,47 @@ export default function (state = initState, action) {
 				]
 			}
 		case DELETE_ALUMINI:
-			var position = state.alumini.findIndex(a=>a.aluminiID===action.payload);
-			state.alumini.splice(position,1);
+			var position = state.alumini.findIndex(a => a.aluminiID === action.payload);
+			state.alumini.splice(position, 1);
+			return {
+				...state,
+				// screams: state.screams.filter((scream) => scream.screamId !== action.payload )
+			}
+
+		case SET_LEADERS:
+			return {
+				...state,
+				leaders: action.payload,
+				loading: false
+			}
+
+		case ADD_LEADER:
+			return {
+				...state,
+				leaders: [
+					action.payload,
+					...state.leaders
+				]
+			}
+
+		case SET_CHAIRMAN:
+			return {
+				...state,
+				chairman: action.payload,
+				loading: false
+			}
+
+		case ADD_CHAIRMAN:
+			return {
+				...state,
+				chairman: [
+					action.payload,
+					...state.chairman
+				]
+			}
+		case DELETE_CHAIRMAN:
+			var location = state.chairman.findIndex(a => a.chairmanID === action.payload);
+			state.chairman.splice(location, 1);
 			return {
 				...state,
 				// screams: state.screams.filter((scream) => scream.screamId !== action.payload )

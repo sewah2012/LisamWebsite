@@ -46,6 +46,18 @@ const about = [
 	},
 	{
 		id: 2,
+		name: 'Past Presidents',
+		link: '/past-presidents',
+		cName: 'menu-item',
+	},
+	{
+		id: 3,
+		name: 'Committees and Chairman',
+		link: '/committees',
+		cName: 'menu-item',
+	},
+	{
+		id: 4,
 		name: 'Membership',
 		link: '/membership',
 		cName: 'menu-item',

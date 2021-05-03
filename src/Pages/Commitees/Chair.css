@@ -1,0 +1,29 @@
+.chair{
+	padding: .5rem;
+	width: 15rem;
+	text-align: center;
+
+}
+.chair >p{
+	color: gray;
+}
+.chair >img{
+	max-width: 15rem;
+	max-height: 15rem;
+	object-fit: contain;
+}
+.chair >h2{
+	text-transform: uppercase;
+	color: blue;
+}
+
+.chair >h4{
+	text-transform: uppercase;
+	color: red;
+}
+
+.chair__social{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}

@@ -48,16 +48,16 @@ const Staff = ({ name, position, fieldofstudy, imageUrl, phone, email,facebook,l
 				<MailOutlineIcon />
 				<p><i>{email}</i></p><br />
 				{facebook&&<FacebookIcon />} 
-				{facebook&&<p><i><a href={facebook} target='_blank'>FB Profile</a></i></p>}<br/>
+				{facebook&&<p><i><a href={facebook} rel="noreferrer"  target='_blank'>FB Profile</a></i></p>}<br/>
 				{linkind&&<LinkedInIcon />}
-				{linkind&&<p><i><a href={linkind} target='_blank'>My LinkInd</a></i></p>}
+				{linkind&&<p><i><a href={linkind} rel="noreferrer" target='_blank'>My LinkInd</a></i></p>}
 				
 
 
 			</div>
 			
 			<div className='staffBox__details'>
-				<h4><a href='' target='_blank' >{name} </a></h4>
+				<h4><a href=''  target='_blank' >{name} </a></h4>
 				<h5>{position}</h5>
 
 			</div>

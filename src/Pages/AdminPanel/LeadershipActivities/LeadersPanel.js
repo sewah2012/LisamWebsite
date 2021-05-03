@@ -1,10 +1,9 @@
-import { Button, makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow } from '@material-ui/core'
+import {makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow } from '@material-ui/core'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getAlumini } from '../../../Redux/actions/newsActions';
-import AddAlumini from './AddAlumini';
-import DeleteAlumini from './DeleteAlumini';
-import EditAlumini from './EditAlumini';
+import {getLeaders } from '../../../Redux/actions/newsActions';
+import EditLeader from './EditLeader';
+
 
 const useStyles = makeStyles({
 	root: {
@@ -17,16 +16,15 @@ const useStyles = makeStyles({
 
 const columns = [
 	{ id: 'name', label: 'Name', minWidth: 170 },
-	{ id: 'discipline', label: 'Discipline', minWidth: 100 },
-	{ id: 'level', label: 'Degree Earned', minWidth: 100 },
-	{ id: 'institution', label: 'Institution', minWidth: 100 },
-	{ id: 'year', label: 'Year of Completion', minWidth: 100 }
+	{ id: 'position', label: 'Position', minWidth: 100 },
+	{ id: 'email', label: 'Email', minWidth: 100 },
+	{ id: 'phone', label: 'Phone Number', minWidth: 100 }
 
 ];
 
-const AluminiPanel = () => {
+const LeadersPanel = () => {
 	const dispatch = useDispatch();
-	const { loading, alumini } = useSelector(state => state.data)
+	const { loading, leaders } = useSelector(state => state.data)
 	const classes = useStyles();
 	const [page, setPage] = React.useState(0);
 	const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -42,18 +40,18 @@ const AluminiPanel = () => {
 	};
 
 	useEffect(() => {
-		dispatch(getAlumini());
+		dispatch(getLeaders());
 		return () => {
 
 		}
-	}, [])
+	}, [dispatch])
 
 	return (
 		<div>
-			{/* <h1>Alumini Management Console</h1> */}
+			<h1>Current Top Executive</h1>
 
 			<div className='dashboardBody'>
-				<AddAlumini />
+				{/* <AddAlumini /> */}
 
 				<Paper className={classes.root}>
 					{loading ? <h2>loading data ...</h2> :
@@ -77,7 +75,7 @@ const AluminiPanel = () => {
 										</TableRow>
 									</TableHead>
 									<TableBody>
-										{alumini.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
+										{leaders.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
 											return (
 												<TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
 													{columns.map((column) => {
@@ -90,8 +88,7 @@ const AluminiPanel = () => {
 
 													})}
 													<TableCell >
-														<EditAlumini alumini={row} />
-														<DeleteAlumini aluminiId={row.aluminiID}/>
+														<EditLeader leader={row} />
 													</TableCell>
 												</TableRow>
 											);
@@ -102,7 +99,7 @@ const AluminiPanel = () => {
 							<TablePagination
 								rowsPerPageOptions={[5, 10, 15]}
 								component="div"
-								count={alumini.length}
+								count={leaders.length}
 								rowsPerPage={rowsPerPage}
 								page={page}
 								onChangePage={handleChangePage}
@@ -117,4 +114,4 @@ const AluminiPanel = () => {
 	)
 }
 
-export default AluminiPanel
+export default LeadersPanel

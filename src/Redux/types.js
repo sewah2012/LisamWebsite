@@ -24,4 +24,21 @@ export const ADD_ALUMINI = 'ADD_ALUMINI';
 export const MODIFY_ALUMINI = 'MODIFY_ALUMINI';
 export const DELETE_ALUMINI = 'DELETE_ALUMINI';
 
+//leaders type 
+export const SET_LEADERS = 'SET_LEADERS';
+export const ADD_LEADER = 'ADD_LEADER';
+export const MODIFY_LEADER = 'MODIFY_LEADER';
+export const DELETE_LEADER = 'DELETE_LEADER';
+
+//PAST lEADERS TYPE 
+export const SET_PAST_LEADERS = 'SET_PAST_LEADERS';
+export const ADD_PAST_LEADER = 'ADD_PAST_LEADER';
+export const MODIFY_PAST_LEADER = 'MODIFY_PAST_LEADER';
+export const DELETE_PAST_LEADER = 'DELETE_PAST_LEADER';
+
+//chairman types 
+export const SET_CHAIRMAN = 'SET_CHAIRMAN';
+export const ADD_CHAIRMAN = 'ADD_CHAIRMAN';
+export const MODIFY_CHAIRMAN = 'MODIFY_LEADER';
+export const DELETE_CHAIRMAN = 'DELETE_CHAIRMAN';
 

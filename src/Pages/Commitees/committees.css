@@ -1,0 +1,21 @@
+.committee > h1{
+padding-top:5rem;
+text-align: center;
+text-transform: uppercase;
+font-size: 2rem;
+color: green;
+}
+.committee__leaders{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 5rem 10rem;
+	border: 1px solid gray;
+}
+
+
+@media screen and (max-width:600px){
+	.committee__leaders{
+		padding: 0	rem 1rem;
+	}
+}

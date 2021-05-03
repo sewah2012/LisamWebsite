@@ -6,12 +6,14 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import { Button } from '@material-ui/core';
+import { useSelector } from 'react-redux';
 
 
 const Header = () => {
 	// const [MenuOpen, setMenuOpen] = useState(false);
 
 	// const toggleMenu = () => setMenuOpen(!MenuOpen);
+	const {authenticated} = useSelector(state => state.user)
 	return (
 		<div>
 			<div className='Header'>
@@ -32,7 +34,12 @@ const Header = () => {
 						<a href='https://www.facebook.com/Liberian-Student-Association-In-Morocco-102390798420984' target="_blank"><YouTubeIcon fontSize="medium" /></a>
 					</div>
 					<div className='Header__navbar-admin'>
-						<Link to='/login'><Button color='secondary' variaint='contained'>Sign in</Button></Link>
+						{
+							authenticated ? <Link to='/admin-panel'><Button color='secondary' variaint='contained'>Admin Panel</Button></Link> : 
+							(
+								<Link to='/login'><Button color='secondary' variaint='contained'>Sign in</Button></Link>
+							)
+						}
 					</div>
 				</div>
 

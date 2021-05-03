@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SET_AlUMINI,CLEAR_ERRORS, DELETE_NEWS, LOADING_DATA, LOADING_UI, POST_NEWS, SET_ERRORS, SET_NEWS_ARTICLE, SET_NEWS_ARTICLES, STOP_LOADING_UI, ADD_ALUMINI, DELETE_ALUMINI, SET_LEADERS, ADD_LEADER, ADD_CHAIRMAN, SET_CHAIRMAN, DELETE_CHAIRMAN } from "../types";
+import { SET_AlUMINI,CLEAR_ERRORS, DELETE_NEWS, LOADING_DATA, LOADING_UI, POST_NEWS, SET_ERRORS, SET_NEWS_ARTICLE, SET_NEWS_ARTICLES, STOP_LOADING_UI, ADD_ALUMINI, DELETE_ALUMINI, SET_LEADERS, ADD_LEADER, ADD_CHAIRMAN, SET_CHAIRMAN, DELETE_CHAIRMAN, SET_PAST_LEADERS, ADD_PAST_LEADER, DELETE_PAST_LEADER } from "../types";
 
 
 export const postNews = (newNews, handleClose) => async (dispatch) => {
@@ -244,6 +244,68 @@ export const deleteChairman = (chairmanID, handleClose)=>(dispatch)=>{
 		  dispatch({
 			  type:DELETE_CHAIRMAN,
 			  payload:chairmanID
+		  });
+
+		  handleClose();
+
+	  })
+}
+
+//past leaders actions 
+export const getPastLeaders=()=>(dispatch)=>{
+	dispatch({type:LOADING_DATA});
+	axios.get('/past-leader')
+	.then(res => {
+		dispatch({ type: SET_PAST_LEADERS, payload: res.data });
+	})
+	.catch(err => {
+		dispatch({ type: SET_PAST_LEADERS, payload: [] });
+	})
+}
+
+export const addPastLeader = (newLeader, handleClose) => async (dispatch) => {
+	dispatch({ type: LOADING_UI });
+
+	await axios.post('/past-leader', newLeader)
+		.then(res => {
+			dispatch({
+				type: ADD_PAST_LEADER,
+				payload: res.data
+			});
+
+			dispatch({
+				type: CLEAR_ERRORS,
+			});
+
+			handleClose();
+		})
+		.catch(err => {
+			dispatch({
+				type: SET_ERRORS,
+				payload: err.response.data
+			});
+		})
+}
+
+export const editPastLeader=(leaderId,data,handleClose)=>(dispatch)=>{
+	dispatch({type:LOADING_UI});
+	axios.post(`/edit/past-leader/${leaderId}`, data)
+	.then((res)=>{
+		// console.log(res);
+		dispatch(getPastLeaders());
+		handleClose();
+	})
+	.catch(err=>console.log(err));
+}
+
+export const deletePastLeader = (LeaderID, handleClose)=>(dispatch)=>{
+	axios
+	  .get(`delete/past-leader/${LeaderID}`)
+	  .then(res=>{
+		  console.log(res.data)
+		  dispatch({
+			  type:DELETE_PAST_LEADER,
+			  payload:LeaderID
 		  });
 
 		  handleClose();

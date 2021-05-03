@@ -1,7 +1,7 @@
 import { Button, CircularProgress, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, MenuItem, Select, TextField } from '@material-ui/core'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addAlumini, editAlumini } from '../../../Redux/actions/newsActions';
+import {editAlumini } from '../../../Redux/actions/newsActions';
 import { CLEAR_ERRORS } from '../../../Redux/types';
 
 const styles = {

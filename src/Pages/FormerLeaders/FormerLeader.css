@@ -1,0 +1,45 @@
+.formerleader{
+	border: 2px solid red;
+	padding: .5rem;
+	width: 20rem;
+	text-align: center;
+	margin: 1rem;
+}
+
+.formerleader >h1{
+	color: red;
+}
+
+.formerleader h2 {
+	color: blue;
+	text-transform: uppercase;
+}
+
+.formerleader h4 {
+	color: gray;
+}
+
+.formerleader__exec{
+	border: 2px solid blue;
+	border-radius: 5px;
+	padding: .5rem;
+}
+
+.formerleader__pres{
+	margin: .5rem;
+}
+
+
+/* former leaders  */
+
+.formerLeaders__list{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.formerLeaders >h1{
+	text-transform: uppercase;
+	text-align: center;
+	color: green;
+	padding-bottom: 1rem;
+}

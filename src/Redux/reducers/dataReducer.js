@@ -1,4 +1,4 @@
-import { ADD_ALUMINI, ADD_CHAIRMAN, ADD_LEADER, DELETE_ALUMINI, DELETE_CHAIRMAN, DELETE_NEWS, LOADING_DATA, POST_NEWS, SET_AlUMINI, SET_CHAIRMAN, SET_LEADERS, SET_NEWS_ARTICLE, SET_NEWS_ARTICLES } from "../types";
+import { ADD_ALUMINI, ADD_CHAIRMAN, ADD_LEADER, ADD_PAST_LEADER, DELETE_ALUMINI, DELETE_CHAIRMAN, DELETE_NEWS, DELETE_PAST_LEADER, LOADING_DATA, POST_NEWS, SET_AlUMINI, SET_CHAIRMAN, SET_LEADERS, SET_NEWS_ARTICLE, SET_NEWS_ARTICLES, SET_PAST_LEADERS } from "../types";
 
 const initState = {
 	articles: [],
@@ -104,6 +104,30 @@ export default function (state = initState, action) {
 		case DELETE_CHAIRMAN:
 			var location = state.chairman.findIndex(a => a.chairmanID === action.payload);
 			state.chairman.splice(location, 1);
+			return {
+				...state,
+				// screams: state.screams.filter((scream) => scream.screamId !== action.payload )
+			}
+
+		//past leaders reducers 
+		case SET_PAST_LEADERS:
+			return {
+				...state,
+				pastLeaders: action.payload,
+				loading: false
+			}
+
+		case ADD_PAST_LEADER:
+			return {
+				...state,
+				pastLeaders: [
+					action.payload,
+					...state.pastLeaders
+				]
+			}
+		case DELETE_PAST_LEADER:
+			var spot = state.pastLeaders.findIndex(a => a.leaderID === action.payload);
+			state.pastLeaders.splice(spot, 1);
 			return {
 				...state,
 				// screams: state.screams.filter((scream) => scream.screamId !== action.payload )

@@ -4,7 +4,7 @@ import React from 'react'
 const Partners = () => {
 	return (
 		<div className = 'Partners'>
-			<h3>Meet our parners and friends</h3>
+			<h3>Meet our partners and friends</h3>
 			<div className='parters__box'>
 				<ul className='Partners__box-logoList'>
 					<li>

@@ -8,7 +8,7 @@ import DropDown from './DropDown';
 import { IconButton } from '@material-ui/core';
 
 
-const study = [	
+const study = [
 	{
 		id: 4,
 		name: 'Scholarships in Morocco',
@@ -40,25 +40,26 @@ const study = [
 const about = [
 	{
 		id: 1,
-		name: 'The Leadership',
+		name: 'Our Leadership',
 		link: '/about-us#staff',
 		cName: 'menu-item',
 	},
 	{
-		id: 2,
-		name: 'Past Presidents',
-		link: '/past-presidents',
-		cName: 'menu-item',
-	},
-	{
 		id: 3,
-		name: 'Committees and Chairman',
+		name: 'Our Committees and Chairman',
 		link: '/committees',
 		cName: 'menu-item',
 	},
 	{
+		id: 2,
+		name: 'Our Past Leaders',
+		link: '/past-presidents',
+		cName: 'menu-item',
+	},
+
+	{
 		id: 4,
-		name: 'Membership',
+		name: 'Our Membership',
 		link: '/membership',
 		cName: 'menu-item',
 	}
@@ -67,19 +68,19 @@ const about = [
 const alumini = [
 	{
 		id: 1,
-		name: 'about-alumini',
+		name: 'about the alumini',
 		link: '/alumini-about',
 		cName: 'menu-item',
 	},
 	{
 		id: 2,
-		name: 'Leadership',
+		name: 'Executives',
 		link: '/alumini-about#staff',
 		cName: 'menu-item',
 	},
 	{
 		id: 3,
-		name: 'Alumini Members / Graduates',
+		name: 'Alumini Members / Veterans',
 		link: '/alumini',
 		cName: 'menu-item',
 	}
@@ -227,7 +228,7 @@ const HeaderNav = () => {
 					<Link to='/services' className='nav-links' >
 						<div onClick={closeMenu} >
 							Student Services
-						</div>						
+						</div>
 						<IconButton onClick={onMouseEnterServices}>
 							<ExpandMoreIcon fontSize='large' />
 						</IconButton>
@@ -241,7 +242,7 @@ const HeaderNav = () => {
 							Study In Morocco
 						</div>
 						<IconButton onClick={onMouseEnterStudy}>
-							<ExpandMoreIcon fontSize='large'/>
+							<ExpandMoreIcon fontSize='large' />
 						</IconButton>
 					</Link>
 					{dropStudy && <DropDown items={study} />}
@@ -252,7 +253,7 @@ const HeaderNav = () => {
 						<div onClick={closeMenu} >
 							Alumini
 						</div> <IconButton onClick={onMouseEnterAbout}>
-							<ExpandMoreIcon fontSize='large'/>
+							<ExpandMoreIcon fontSize='large' />
 						</IconButton>
 					</Link>
 					{dropAbout && <DropDown items={alumini} />}
@@ -262,9 +263,9 @@ const HeaderNav = () => {
 					<Link to='/media' className='nav-links' >
 						<div onClick={closeMenu} >
 							Media
-						</div> 
+						</div>
 						<IconButton onClick={onMouseEnterMedia}>
-							<ExpandMoreIcon fontSize='large's/>
+							<ExpandMoreIcon fontSize='large' s />
 						</IconButton>
 					</Link>
 					{dropMedia && <DropDown items={media} />}

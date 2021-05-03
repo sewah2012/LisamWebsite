@@ -10,7 +10,7 @@ const AboutAlumini = () => {
 	return (
 		<div className='about'>
 			<Header />
-			<Banner title='LISAM-Alumini Association' image='/assets/imgs/study.jpg' />
+			<Banner title='LISAM-Alumini Association' image='https://adsf.schoolspeak.com/Data/Communities/94110003/Postings/Alumni/alumni.png' />
 			<div className='about__info'>
 
 

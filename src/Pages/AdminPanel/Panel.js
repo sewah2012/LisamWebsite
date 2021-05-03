@@ -53,18 +53,18 @@ const Panel = () => {
 
 					<div className='panel__menu'>
 						<div className='panel__menu-item'>
-							<Button onClick={setNewsView} variant='contained' fullWidth color='primary'>NEWS</Button>
+							<Button onClick={setNewsView} variant='contained' fullWidth color={newsOpen ? 'secondary' : 'primary'}>NEWS</Button>
 						</div>
 						<div className='panel__menu-item'>
-							<Button onClick={setAluminiView} variant='contained' fullWidth color='primary'>Alumini</Button>
-						</div>
-
-						<div className='panel__menu-item'>
-							<Button onClick={setLeadersView} variant='contained' fullWidth color='primary'>Leadership</Button>
+							<Button onClick={setAluminiView} variant='contained' fullWidth color={aluminiOpen ? 'secondary' : 'primary'}>Alumini</Button>
 						</div>
 
 						<div className='panel__menu-item'>
-							<Button onClick={setUserView} variant='contained' fullWidth color='primary'>Users</Button>
+							<Button onClick={setLeadersView} variant='contained' fullWidth color={leadersOpen ? 'secondary' : 'primary'}>Leadership</Button>
+						</div>
+
+						<div className='panel__menu-item'>
+							<Button onClick={setUserView} variant='contained' fullWidth color={userOpen ? 'secondary' : 'primary'}>Users</Button>
 						</div>
 
 

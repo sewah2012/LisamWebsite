@@ -32,6 +32,7 @@ import AboutAlumini from './Pages/Graduates/AboutAlumini';
 import Scholarships from './Pages/StudyInMorocco/Scholarships';
 import Panel from './Pages/AdminPanel/Panel';
 import Commitees from './Pages/Commitees/Commitees';
+import FormerLeaders from './Pages/FormerLeaders/FormerLeaders';
 
 axios.defaults.baseURL = 'https://us-central1-lisam-5c8b4.cloudfunctions.net/api';
 
@@ -84,6 +85,7 @@ function App() {
         <Route path='/library' exact component={Library} />
         <Route path='/gallery' exact component={Gallery} />
         <Route path='/committees' exact component={Commitees} />
+        <Route path='/past-presidents' exact component={FormerLeaders} />
 
         {/* secure routes */}
         <Secureroute path='/admin-panel' exact authenticated={authenticated} component={Panel} />

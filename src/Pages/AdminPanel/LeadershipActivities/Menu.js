@@ -1,4 +1,4 @@
-import './Menu.css'
+import './Menu.css';
 import { Button } from '@material-ui/core';
 import React, { useState } from 'react'
 import CommitteesLeaderPanel from './CommitteesLeaderPanel';
@@ -9,7 +9,6 @@ const Menu = () => {
 	const [currentLeadersOpen, setcurrentLeadersOpen] = useState(true);
 	const [committeesOpen, setcommitteesOpen] = useState(false);
 	const [pastLeadersOpen, setpastLeadersOpen] = useState(false);
-	const [leadersOpen, setLeadersOpen] = useState(false)
 
 
 	const setCurrentLeadersView = () => {
@@ -32,8 +31,8 @@ const Menu = () => {
 
 	}
 	return (
-		<div>
-			<div className='Leadership__menu__items'>
+		<div className='executivesMenu'>
+			<div className='executivesMenu__items'>
 				<div className='menu-item'>
 					<Button onClick={setCurrentLeadersView} variant='contained' color={currentLeadersOpen ? 'secondary' : 'primary'}>Current Leadership</Button>
 				</div>

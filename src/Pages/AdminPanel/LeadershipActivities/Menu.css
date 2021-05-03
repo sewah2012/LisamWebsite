@@ -1,5 +1,12 @@
-.Leadership__menu__items{
+.executivesMenu__items{
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	/* justify-content: space-around; */
+	background-color: teal;
+	margin-bottom: 1rem;
 }
+
+.executivesMenu__items >div{
+	width: fit-content;
+}
+

@@ -1,0 +1,38 @@
+#residenceCardBody{
+	padding: 5rem 10rem;
+	color: gray;
+}
+
+#residenceCardBody h1{
+	color: blue;
+}
+
+#residenceCardBody h2{
+	color: red;
+}
+
+
+.residence__procedures{
+	margin: 1rem;
+}
+
+.residence__procedures > li{
+	margin: 1rem;
+	
+}
+
+.important a{
+	color: blue;
+}
+
+.important a:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+@media only screen and (max-width:800px){
+	#residenceCardBody{
+		padding: .5rem .1rem;
+		color: gray;
+	}	
+}

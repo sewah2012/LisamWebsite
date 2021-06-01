@@ -16,37 +16,41 @@ const ResidenceCard = () => {
         <h1>Procedures for obtaining or Renewing your residence card</h1>
         <p>
           Consistent with Morocco's immigration laws, all residents in Morocco
-          are required to obtain a resident card, if he/she desires to reside in
-          Morocco. For students, upon the completion of your enrollment process
-          at AMCI, you're needed to follow the following procedures to obtain a
-          permanent resident:
+          are required to obtain a residence card, if he/she desires to reside
+          in Morocco. For students, upon the completion of your enrollment
+          process at AMCI, you are needed to follow the following procedures to
+          obtain a permanent residence:
         </p>{' '}
         {/* <br /> */}
         <ol className="residence__procedures">
           <li>
             Carte de Séjour application forms, drawn up by the DGSN,(National
-            Police Authority)duly completed in duplicate;
+            Police Authority) duly completed in duplicate.
           </li>
           <li>
             Certified copies of the pages of the passport establishing the
             identity of the person concerned, the stamp attesting to their
-            admission into Morocco and the foreigners subject to this formality;
-            entry visa.{' '}
+            admission into Morocco and the foreigners subject to this formality.
+            (entry visa).{' '}
           </li>
           <li>
-            An extract of criminal record from your country of origin, should
-            tbe translated to French in Morocco (new students Only);
+            An extract of criminal record from your country of origin, should be
+            translated to French in Morocco (new students Only);
           </li>
           <li>
             An extract of the Moroccan criminal record from your city of
-            residence (Cassier Judiciaire); click here to apply for your Casier
-            Judiciaire;
+            residence (Cassier Judiciaire).
+            <br />
+            <i>
+              Check the Important Links section to apply online for this
+              document.
+            </i>
           </li>
           <li>
             {' '}
-            Original copy of your medical certificate (Certificat medical);
+            Original copy of your medical certificate (Certificat medical).
           </li>
-          <li>Certified copy of School Enrolment Certificate</li>
+          <li>Certified copy of School Enrollment Certificate</li>
           <li>(Attestation d'inscription) School registration certificate </li>
           <li>Scholarship certificate (Attestation de Bourse);</li>
           <li>
@@ -74,14 +78,14 @@ const ResidenceCard = () => {
             target="_blank"
             rel="noreferrer"
           >
-            Online Police Clarence Demande Platform
+            Online Police Clearence Demande Platform
           </a>
         </div>
         <br /> <br /> <br />
         <div>
           <h1>
             Any student having difficulty obtaining the above mentioned required
-            documents should kindly refer to the individuals below:
+            documents should kindly refer to the individual below:
           </h1>
           <h2>Emmanuel Sahr Sewah,</h2>
           <h4>General Secretary, (LISAM)</h4>

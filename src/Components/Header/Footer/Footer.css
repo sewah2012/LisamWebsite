@@ -81,7 +81,7 @@
 }
 
 .footer__developer{
-	background-color: #ee6f57;
+	background-color: black;
 	color: #f6f5f5;
 	padding: .5rem;
 	text-align: center;
@@ -89,6 +89,10 @@
 .footer__developer span{
 	color: #f9f871;
 	font-weight: bold;
+}
+
+.foooter__developer h6 {
+	color: green;
 }
 
 @media screen and (max-width:600px){

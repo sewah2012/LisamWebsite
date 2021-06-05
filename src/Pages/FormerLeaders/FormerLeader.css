@@ -1,7 +1,7 @@
 .formerleader{
 	border: 2px solid red;
 	padding: .5rem;
-	width: 20rem;
+	/* width: fit-content; */
 	text-align: center;
 	margin: 1rem;
 }
@@ -13,6 +13,7 @@
 .formerleader h2 {
 	color: blue;
 	text-transform: uppercase;
+	font-size: 1rem;
 }
 
 .formerleader h4 {
@@ -23,12 +24,21 @@
 	border: 2px solid blue;
 	border-radius: 5px;
 	padding: .5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .formerleader__pres{
 	margin: .5rem;
 }
 
+.formerLeaderPhoto >img{
+	width: 15rem;
+	height: 15rem;
+	object-fit: contain;
+	border-radius: 10%;
+}
 
 /* former leaders  */
 
@@ -43,3 +53,11 @@
 	color: green;
 	padding-bottom: 1rem;
 }
+
+@media only screen and (max-width:800px){
+	.formerLeaderPhoto >img{
+		width: 10rem;
+		height: 10rem;
+		object-fit: contain;
+		
+}}

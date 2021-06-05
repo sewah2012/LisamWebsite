@@ -1,179 +1,312 @@
-import { Button, CircularProgress, Dialog, DialogActions, DialogContent, DialogTitle,TextField } from '@material-ui/core'
+import {
+  Button,
+  CircularProgress,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  TextField,
+} from '@material-ui/core'
+import axios from 'axios'
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { editPastLeader } from '../../../Redux/actions/newsActions';
-import { CLEAR_ERRORS } from '../../../Redux/types';
+import { useDispatch, useSelector } from 'react-redux'
+import { editPastLeader } from '../../../Redux/actions/newsActions'
+import { CLEAR_ERRORS } from '../../../Redux/types'
 
 const styles = {
-	closeBtn: {
-		position: 'absolute',
-		left: '90%'
-	},
-	textField: {
-		margin: '10px auto 10px auto'
-	},
-	button: {
-		display: 'block',
-		marginTop: 5,
-	},
-	formControl: {
-		margin: '1rem',
-		minWidth: 120,
-	},
+  closeBtn: {
+    position: 'absolute',
+    left: '90%',
+  },
+  textField: {
+    margin: '10px auto 10px auto',
+  },
+  button: {
+    display: 'block',
+    marginTop: 5,
+  },
+  formControl: {
+    margin: '1rem',
+    minWidth: 120,
+  },
 }
 
+const EditFormerLeader = ({ formerLeader }) => {
+  const classes = styles
+  const { errors, loading } = useSelector((state) => state.UI)
+  const [presUpload, setPresUpload] = useState(null)
+  const [vpUpload, setVpUpload] = useState(null)
+  const [loadingPresImg, setLoadingPresImg] = useState(false)
+  const [loadingVpImg, setLoadingVpImg] = useState(false)
 
-const EditFormerLeader = ({ alumini }) => {
-	const classes = styles;
-	const { errors, loading } = useSelector(state => state.UI);
+  const dispatch = useDispatch()
 
-	const dispatch = useDispatch();
+  const [newAlumini, setNewAlumini] = useState({
+    presidentName: formerLeader.presidentName,
+    vicePresidentName: formerLeader.vicePresidentName,
+    startYear: formerLeader.startYear,
+    endYear: formerLeader.endYear,
+    vpImage: formerLeader.vpImage,
+    presImage: formerLeader.presImage,
+    vpFilepath: formerLeader.vpFilepath,
+    presFilepath: formerLeader.presFilepath,
+  })
 
+  let imgUpld1 = {}
+  let imgUpld2 = {}
 
-	const [newAlumini, setNewAlumini] = useState({
-		presidentName: alumini.presidentName,
-		vicePresidentName: alumini.vicePresidentName,
-		startYear: alumini.startYear,
-		endYear: alumini.endYear,
-	});
+  const [open, setOpen] = useState(false)
 
-	const [open, setOpen] = useState(false);
-	
-	const handleOpen = () => {
-		setOpen(true)
-	}
+  const handleOpen = () => {
+    setOpen(true)
+  }
 
-	const handleClose = () => {
-		dispatch({ type: CLEAR_ERRORS })
-		setOpen(false);
-		setNewAlumini({
-			presidentName: alumini.presidentName,
-			vicePresidentName: alumini.vicePresidentName,
-			startYear: alumini.startYear,
-			endYear: alumini.endYear,
-		});
+  const handleClose = () => {
+    dispatch({ type: CLEAR_ERRORS })
+    setOpen(false)
+    setNewAlumini({
+      presidentName: formerLeader.presidentName,
+      vicePresidentName: formerLeader.vicePresidentName,
+      startYear: formerLeader.startYear,
+      endYear: formerLeader.endYear,
+      vpImage: formerLeader.vpImage,
+      presImage: formerLeader.presImage,
+      vpFilepath: formerLeader.vpFilepath,
+      presFilepath: formerLeader.presFilepath,
+    })
+  }
 
-	}
+  const handleChange = (event) => {
+    setNewAlumini({
+      ...newAlumini,
+      [event.target.name]: event.target.value,
+    })
+  }
 
-	const handleChange = (event) => {
-		setNewAlumini({
-			...newAlumini,
-			[event.target.name]: event.target.value
-		});
-	}
+  const handleSubmit = async (event) => {
+    // console.log(newAlumini)
 
+    let formData = new FormData()
+    let formData2 = new FormData()
+    if (presUpload == null) {
+      //   setImgError(true)
+      //   alert('form data is empty')
+    } else {
+      formData.append('image', presUpload, presUpload.name) //create form data
+    }
 
-	const handleSubmit = async (event) => {
-		const editData = {
-			presidentName: newAlumini.presidentName,
-			vicePresidentName: newAlumini.vicePresidentName,
-			startYear: newAlumini.startYear,
-			endYear: newAlumini.endYear,
-		}
+    if (presUpload !== null) {
+      setLoadingPresImg(true)
+      const axiosRes = await axios.post('/news/image', formData)
 
-		// console.log(editData);
+      if (axiosRes) {
+        imgUpld1 = {
+          presimageUrl: axiosRes.data.img,
+          presfilepath: axiosRes.data.filepath,
+        }
 
-		dispatch(editPastLeader(alumini.officialId, editData, handleClose));
-	}
+        // console.log(axiosRes.data)
+      }
+      setLoadingPresImg(false)
+    }
 
+    //VP image upload
+    if (vpUpload == null) {
+      //   setImgError(true)
+      //   alert('form data for vp is empty')
+    } else {
+      formData2.append('image', vpUpload, vpUpload.name) //create form data
+    }
 
+    if (vpUpload !== null) {
+      setLoadingVpImg(true)
+      const axiosRes = await axios.post('/news/image', formData2)
 
-	return (
-		<div>
-			<Button color='primary' variant='contained' size='large' onClick={handleOpen}>
-				Edit
-			</Button>
-			<Dialog
-				open={open}
-				onClose={handleClose}
-				fullWidth
-				maxWidth='sm'
-			>
-				<DialogTitle>Edit Information</DialogTitle>
-				<DialogContent>
-					<form>
-						<TextField
-							name='presidentName'
-							type='text'
-							label='Full Name of the President'
-							placeholder='Full name of President'
-							value={newAlumini.presidentName}
-							onChange={handleChange}
-							variant='outlined'
-							fullWidth
-							error={errors.presidentName ? true : false}
-							helperText={errors.presidentName}
-							className={classes.TextField}
-							required
-						/>
-						<br /><br />
+      if (axiosRes) {
+        imgUpld2 = {
+          vpimageUrl: axiosRes.data.img,
+          vpfilepath: axiosRes.data.filepath,
+        }
 
-						<TextField
-							name='vicePresidentName'
-							type='text'
-							label='Vice President Full Name'
-							placeholder='Full Name of Vice-President'
-							value={newAlumini.vicePresidentName}
-							onChange={handleChange}
-							variant='outlined'
-							fullWidth
-							error={errors.vicePresidentName ? true : false}
-							helperText={errors.vicePresidentName}
-							className={classes.TextField}
-							required
-						/>
+        // console.log(axiosRes.data)
+      }
+      setLoadingVpImg(false)
+    }
 
+    const Editedleader = {
+      presidentName: newAlumini.presidentName,
+      vicePresidentName: newAlumini.vicePresidentName,
+      startYear: newAlumini.startYear,
+      endYear: newAlumini.endYear,
+      vpImage: imgUpld2.vpimageUrl ? imgUpld2.vpimageUrl : newAlumini.vpImage,
+      presImage: imgUpld1.presimageUrl
+        ? imgUpld1.presimageUrl
+        : newAlumini.presImage,
+      vpFilepath: imgUpld2.vpfilepath
+        ? imgUpld2.vpfilepath
+        : newAlumini.vpFilepath,
+      presFilepath: imgUpld1.presfilepath
+        ? imgUpld1.presfilepath
+        : newAlumini.presFilepath,
+    }
 
-						<br /><br />
+    // console.log(formerLeader)
 
-						<TextField
-							name='startYear'
-							type='number'
-							label='Year Inducted in Office'
-							placeholder='Year degree was earned'
-							value={newAlumini.startYear}
-							onChange={handleChange}
-							fullWidth
-							variant='outlined'
-							error={errors.startYear ? true : false}
-							helperText={errors.startYear}
+    // dispatch(editPastLeader(formerLeader.officialId, formerLeader, handleClose))
 
-							className={classes.TextField}
-						/>
+    dispatch(editPastLeader(formerLeader.officialId, Editedleader, handleClose))
+  }
 
-						<br /><br />
+  const handlePresImageChange = async (event) => {
+    const url = URL.createObjectURL(event.target.files[0])
+    setNewAlumini({
+      ...newAlumini,
+      presImage: url,
+    })
 
-						<TextField
-							name='endYear'
-							type='number'
-							label='Year Administration Ended'
-							placeholder='Year Administration ended'
-							value={newAlumini.endYear}
-							onChange={handleChange}
-							fullWidth
-							variant='outlined'
-							error={errors.endYear ? true : false}
-							helperText={errors.endYear}
+    const selectedImage = event.target.files[0]
 
-							className={classes.TextField}
-						/>
-					</form>
-				</DialogContent>
-				<DialogActions>
-					<Button onClick={handleClose} color='primary'>
-						Cancel
-					</Button>
-					<Button disabled={loading} onClick={handleSubmit} color='primary' type='submit'>
-						Save Changes
-						{
-							loading && <CircularProgress color='secondary' />
-						}
+    setPresUpload(selectedImage)
+  }
 
-					</Button>
-				</DialogActions>
-			</Dialog>
-		</div>
-	)
+  const handleVpPresImageChange = async (event) => {
+    const url = URL.createObjectURL(event.target.files[0])
+    setNewAlumini({
+      ...newAlumini,
+      vpImage: url,
+    })
+
+    const selectedImage = event.target.files[0]
+
+    setVpUpload(selectedImage)
+  }
+
+  //   console.log(newAlumini.vpFilepath)
+  return (
+    <div>
+      <Button
+        color="primary"
+        variant="contained"
+        size="large"
+        onClick={handleOpen}
+      >
+        Edit
+      </Button>{' '}
+      <br />
+      <br />
+      <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
+        <DialogTitle>Edit this pas official details</DialogTitle>
+        <DialogContent>
+          <form>
+            <TextField
+              name="presidentName"
+              type="text"
+              label="Full Name of the President"
+              placeholder="Full name of President"
+              value={newAlumini.presidentName}
+              onChange={handleChange}
+              variant="outlined"
+              fullWidth
+              error={errors.presidentName ? true : false}
+              helperText={errors.presidentName}
+              className={classes.TextField}
+              required
+            />
+            <img
+              src={newAlumini.presImage}
+              alt="profileImage"
+              className="postImage"
+            />
+            <input
+              required
+              type="file"
+              id="image"
+              onChange={handlePresImageChange}
+            />
+            {loadingPresImg && <CircularProgress />}
+            <br />
+            <br />
+
+            <TextField
+              name="vicePresidentName"
+              type="text"
+              label="Vice President Full Name"
+              placeholder="Full Name of Vice-President"
+              value={newAlumini.vicePresidentName}
+              onChange={handleChange}
+              variant="outlined"
+              fullWidth
+              error={errors.vicePresidentName ? true : false}
+              helperText={errors.vicePresidentName}
+              className={classes.TextField}
+              required
+            />
+
+            <img
+              src={newAlumini.vpImage}
+              alt="profileImage"
+              className="postImage"
+            />
+            <input
+              required
+              type="file"
+              id="image"
+              onChange={handleVpPresImageChange}
+            />
+            {loadingVpImg && <CircularProgress />}
+
+            <br />
+            <br />
+
+            <TextField
+              name="startYear"
+              type="number"
+              label="Year Inducted in Office"
+              placeholder="Year degree was earned"
+              value={newAlumini.startYear}
+              onChange={handleChange}
+              fullWidth
+              variant="outlined"
+              error={errors.startYear ? true : false}
+              helperText={errors.startYear}
+              className={classes.TextField}
+            />
+
+            <br />
+            <br />
+
+            <TextField
+              name="endYear"
+              type="number"
+              label="Year Administration Ended"
+              placeholder="Year Administration ended"
+              value={newAlumini.endYear}
+              onChange={handleChange}
+              fullWidth
+              variant="outlined"
+              error={errors.endYear ? true : false}
+              helperText={errors.endYear}
+              className={classes.TextField}
+            />
+          </form>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cancel
+          </Button>
+          <Button
+            disabled={loading}
+            onClick={handleSubmit}
+            color="primary"
+            type="submit"
+          >
+            Add
+            {loading && <CircularProgress color="secondary" />}
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+  )
 }
 
 export default EditFormerLeader
